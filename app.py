@@ -1,12 +1,15 @@
 import csv
 import os
-from flask import Flask, request, jsonify, render_template
+import secrets
+from flask import Flask, request, jsonify, render_template, session
 
 from chatbot import get_response
 
 app = Flask(__name__)
+app.secret_key = secrets.token_hex(32)
 
 VOTES_FILE = "votes.csv"
+MAX_CONTEXT_MESSAGES = 6
 
 
 def _ensure_votes_file():
@@ -52,8 +55,35 @@ def home():
 @app.route("/chat", methods=["POST"])
 def chat():
     user_message = request.json.get("message", "")
-    response = get_response(user_message)
-    return jsonify({"reponse": response})
+
+    # Récupérer le contexte conversationnel de la session
+    if "context" not in session:
+        session["context"] = []
+
+    context = session["context"]
+
+    # Obtenir la réponse avec contexte
+    result = get_response(user_message, context=context)
+
+    # Mettre à jour le contexte (garder les N derniers messages utilisateur)
+    context.append(user_message)
+    if len(context) > MAX_CONTEXT_MESSAGES:
+        context = context[-MAX_CONTEXT_MESSAGES:]
+    session["context"] = context
+
+    return jsonify({
+        "reponse": result["response"],
+        "tag": result.get("tag"),
+        "confidence": result.get("confidence", 0),
+        "suggestions": result.get("suggestions", []),
+    })
+
+
+@app.route("/new_conversation", methods=["POST"])
+def new_conversation():
+    """Réinitialise le contexte conversationnel."""
+    session["context"] = []
+    return jsonify({"success": True})
 
 
 @app.route("/get_votes", methods=["GET"])

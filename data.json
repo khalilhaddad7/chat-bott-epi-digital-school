@@ -671,6 +671,114 @@
       "responses": [
         "**Pourquoi choisir l'EPI ?**\n\nL'EPI se distingue par de nombreux atouts :\n\n**Qualité pédagogique :**\n• Classes à taille humaine (meilleur suivi)\n• Enseignants qualifiés (docteurs + professionnels)\n• Programmes actualisés selon les besoins du marché\n\n**Pratique et professionnalisation :**\n• Stages dès la 1ère année\n• Laboratoires modernes et bien équipés\n• Projets concrets et PFE en entreprise\n• Préparation aux certifications internationales\n\n**Accompagnement :**\n• Suivi personnalisé de chaque étudiant\n• Service d'orientation et d'aide au stage\n• Réseau d'anciens diplômés actif\n\n**Ouverture internationale :**\n• Partenariats avec des universités étrangères\n• Possibilités de mobilité et double diplôme\n\n**Insertion professionnelle :**\n• Taux d'emploi élevé\n• Partenariats solides avec les entreprises\n\nDécouvrez l'EPI : https://episup.com/fr"
       ]
+    },
+    {
+      "tag": "inscription_en_ligne",
+      "patterns": [
+        "inscription en ligne", "formulaire en ligne", "postuler en ligne",
+        "s'inscrire en ligne", "candidature en ligne", "lien d'inscription",
+        "je veux m'inscrire maintenant", "inscription sur internet",
+        "comment postuler en ligne", "site d'inscription",
+        "je veux remplir le formulaire", "formulaire de candidature"
+      ],
+      "responses": [
+        "**Inscription en ligne à l'EPI**\n\nVous pouvez vous inscrire facilement en ligne :\n\n**Étapes :**\n1. Rendez-vous sur https://episup.com/fr\n2. Cliquez sur le bouton d'inscription / candidature\n3. Remplissez le formulaire avec vos informations personnelles\n4. Téléchargez les documents requis (bac, relevés, CIN, photos)\n5. Soumettez votre candidature\n6. Attendez la confirmation par email\n\n**Documents à préparer :**\n• Copie du baccalauréat\n• Relevés de notes\n• Photo d'identité récente\n• Copie CIN ou passeport\n\nPour toute assistance : contact@episup.com"
+      ]
+    },
+    {
+      "tag": "emploi_du_temps",
+      "patterns": [
+        "emploi du temps", "edt", "planning des cours", "quand j'ai cours",
+        "horaire de cours", "mon emploi du temps", "consulter mon planning",
+        "où trouver l'emploi du temps", "emploi du temps en ligne"
+      ],
+      "responses": [
+        "**Emploi du temps à l'EPI**\n\nL'emploi du temps est :\n• Communiqué en début de chaque semestre\n• Accessible via le portail étudiant en ligne\n• Affiché dans les locaux de l'école\n\nLes cours se déroulent généralement du lundi au vendredi. En cas de modification, les étudiants sont informés à l'avance.\n\nPour accéder à votre emploi du temps : connectez-vous à votre espace étudiant."
+      ]
+    },
+    {
+      "tag": "alternance",
+      "patterns": [
+        "alternance", "formation en alternance", "étudier et travailler",
+        "mi-temps", "contrat d'alternance", "apprentissage",
+        "est-ce qu'il y a de l'alternance", "travailler et étudier",
+        "formation professionnelle continue"
+      ],
+      "responses": [
+        "**Alternance et formation professionnelle**\n\nL'EPI encourage la professionnalisation :\n\n• Les stages intégrés au cursus offrent une expérience pratique régulière\n• Possibilité de travail à temps partiel compatible avec les horaires de cours\n• Formation continue disponible pour les professionnels en activité\n• Projets en entreprise tout au long du cursus\n\nPour les modalités spécifiques d'alternance, contactez l'administration :\n• Email : contact@episup.com\n• Site : https://episup.com/fr"
+      ]
+    },
+    {
+      "tag": "concours",
+      "patterns": [
+        "concours", "compétition", "hackathon", "challenge",
+        "concours d'innovation", "compétition inter-écoles",
+        "olympiades", "concours de programmation",
+        "est-ce que epi participe aux concours", "compétitions étudiantes"
+      ],
+      "responses": [
+        "**Concours et compétitions à l'EPI**\n\nL'EPI encourage ses étudiants à participer à des concours :\n\n• **Hackathons** : compétitions de développement intensives\n• **Concours d'innovation** : présentation de projets créatifs\n• **Compétitions inter-écoles** : challenges académiques et sportifs\n• **Concours de robotique** : via le Club Robotique\n• **Olympiades scientifiques** : participation régulière\n\nCes compétitions permettent aux étudiants de :\n• Développer leur créativité\n• Travailler en équipe\n• Se faire remarquer par des entreprises\n• Enrichir leur CV\n\nSuivez l'actualité sur les réseaux sociaux de l'EPI !"
+      ]
+    },
+    {
+      "tag": "sante",
+      "patterns": [
+        "santé", "infirmerie", "médecin", "maladie", "assurance",
+        "couverture médicale", "soin", "urgence médicale",
+        "service médical", "psychologue", "stress", "bien-être",
+        "soutien psychologique", "aide psychologique"
+      ],
+      "responses": [
+        "**Santé et bien-être à l'EPI**\n\nL'EPI veille au bien-être de ses étudiants :\n\n• Service d'orientation et d'accompagnement\n• Premiers secours disponibles sur le campus\n• Sensibilisation à la santé mentale et au bien-être\n• Activités sportives pour l'équilibre physique\n\n**Conseils :**\n• Assurez-vous d'avoir une couverture médicale\n• N'hésitez pas à contacter l'administration en cas de besoin\n• Les enseignants et l'équipe pédagogique sont à l'écoute\n\nPour toute situation d'urgence, contactez l'administration : contact@episup.com"
+      ]
+    },
+    {
+      "tag": "projets_etudiants",
+      "patterns": [
+        "projets étudiants", "projet académique", "projet personnel",
+        "mini-projet", "projet de groupe", "travail de groupe",
+        "projet technique", "réalisation", "portfolio",
+        "qu'est-ce qu'on réalise comme projets", "exemples de projets"
+      ],
+      "responses": [
+        "**Projets étudiants à l'EPI**\n\nL'apprentissage par projet est central à l'EPI :\n\n**Types de projets :**\n• Mini-projets semestriels dans chaque matière\n• Projets de groupe interdisciplinaires\n• Projets de fin de semestre\n• Projet de Fin d'Études (PFE) en entreprise\n\n**Domaines :**\n• Applications web et mobiles\n• Systèmes embarqués et IoT\n• Ouvrages de génie civil\n• Automatisation industrielle\n• Intelligence artificielle\n\n**Avantages :**\n• Construction d'un portfolio professionnel\n• Expérience du travail en équipe\n• Présentation devant des jurys\n• Valorisation sur le CV\n\nLes meilleurs projets sont présentés lors des journées portes ouvertes !"
+      ]
+    },
+    {
+      "tag": "reseau_alumni",
+      "patterns": [
+        "alumni", "anciens étudiants", "réseau professionnel",
+        "diplômés", "ancien élève", "réseau d'anciens",
+        "que deviennent les diplômés", "où travaillent les anciens",
+        "association des anciens", "network", "linkedin alumni"
+      ],
+      "responses": [
+        "**Réseau des anciens de l'EPI (Alumni)**\n\nL'EPI maintient un réseau actif d'anciens diplômés :\n\n• **Réseau professionnel** : les diplômés travaillent dans des entreprises en Tunisie et à l'international\n• **Mentorat** : les anciens accompagnent les nouveaux étudiants\n• **Événements networking** : rencontres régulières entre anciens et étudiants actuels\n• **Opportunités d'emploi** : partage d'offres via le réseau\n• **LinkedIn** : communauté active sur les réseaux sociaux\n\nLe réseau alumni est un atout précieux pour l'insertion professionnelle !\n\nPlus d'infos : https://episup.com/fr"
+      ]
+    },
+    {
+      "tag": "horaires_administration",
+      "patterns": [
+        "horaires administration", "heures d'ouverture", "quand est ouvert",
+        "horaire secrétariat", "quand contacter", "jours d'ouverture",
+        "est-ce ouvert le samedi", "ouvert le weekend",
+        "à quelle heure ouvre l'école", "heures de bureau epi"
+      ],
+      "responses": [
+        "**Horaires de l'administration EPI**\n\n• **Jours ouvrables :** Du lundi au vendredi\n• **Horaires :** Aux heures de bureau standard\n• **Weekend :** Fermé le samedi et dimanche (sauf événements spéciaux)\n\n**Contact :**\n• Email : contact@episup.com (réponse rapide)\n• Site : https://episup.com/fr\n• Réseaux sociaux : Facebook, Instagram, LinkedIn\n\nPour les horaires exacts et jours fériés, consultez le site officiel ou appelez directement."
+      ]
+    },
+    {
+      "tag": "difference_licence_ingenieur",
+      "patterns": [
+        "différence licence ingénieur", "licence ou ingénieur",
+        "quelle différence entre licence et ingénieur", "licence vs ingénieur",
+        "c'est mieux licence ou ingénieur", "choisir entre licence et cycle ingénieur",
+        "avantages ingénieur sur licence", "licence appliquée ou ingénieur"
+      ],
+      "responses": [
+        "**Licence Appliquée vs Cycle Ingénieur à l'EPI**\n\n**Licence Appliquée (3 ans - Bac+3) :**\n• Formation professionnalisante\n• 6 semestres avec stages\n• Intégration rapide sur le marché du travail\n• Possibilité de poursuivre en cycle ingénieur ou master\n\n**Cycle Ingénieur (5 ans - Bac+5) :**\n• 2 ans préparatoires + 3 ans de spécialité\n• Formation approfondie et polyvalente\n• Titre d'Ingénieur reconnu\n• Responsabilités supérieures en entreprise\n• Salaire d'entrée généralement plus élevé\n\n**Comment choisir ?**\n• Optez pour la **licence** si vous voulez une intégration professionnelle rapide\n• Optez pour le **cycle ingénieur** si vous visez des postes à responsabilité et un diplôme Bac+5\n\nDans les deux cas, l'EPI assure une formation de qualité !"
+      ]
     }
   ]
 }
