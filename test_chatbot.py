@@ -1,59 +1,111 @@
+"""
+Tests fonctionnels du chatbot EPI.
+Lance le serveur Flask avant d'exécuter : python app.py
+"""
+
 import requests
 import json
 from time import sleep
 
 BASE_URL = "http://localhost:5000/chat"
 
-def test_question(question):
-    print(f"\nQuestion: {question}")
-    response = requests.post(BASE_URL, json={"message": question})
-    
-    if response.status_code == 200:
-        data = response.json()
-        print("Statut: Succès")
-        
-        if 'reponses' in data:
-            print(f"Message: {data['message']}")
-            for i, rep in enumerate(data['reponses'], 1):
-                print(f"\nRéponse {i}:")
-                print(f"Score: {rep['score']:.2f}")
-                print(f"Catégorie: {rep.get('categorie', 'N/A')}")
-                print(f"Source: {rep['source']}")
-                print(f"Contenu:\n{rep['reponse']}")
-        else:
-            print(f"Score: {data['score']:.2f}")
-            print(f"Source: {data.get('source', 'N/A')}")
-            print(f"Réponse:\n{data['reponse']}")
-    else:
-        print(f"Statut: Erreur {response.status_code}")
-        print(response.text)
-
-# Questions de test supplémentaires
+# Questions de test couvrant toutes les thématiques EPI
 QUESTIONS = [
-    "qui est le directeur",
-    "inscription distance",
-    "master informatique",
-    "clubs étudiants",
-    "contacts école",
-    "comment postuler pour un master ?", 
+    # Salutations
+    "bonjour",
+    "salut",
+    # Présentation EPI
+    "c'est quoi l'EPI ?",
+    "présente-moi l'EPI",
+    # Formations
+    "quelles formations propose l'EPI ?",
+    "génie informatique",
+    "génie civil",
+    "génie électrique",
+    "réseaux et télécommunications",
+    # Admission
+    "comment s'inscrire à l'EPI ?",
     "quelles sont les conditions d'admission ?",
-    "où se trouve l'ISET de Sfax ?",
-    "quels sont les avantages du programme de master ?", 
-    "quelles sont les spécialisations en master informatique ?", 
-    "qu’est-ce que le master DSI ?",
-    "quelles sont les modalités de financement ?", 
-    "quels sont les projets étudiants à l'ISET de Sfax ?", 
-    "qui sont les responsables de l'ISET ?", 
-    "quelles sont les formations proposées en informatique ?",
-    "y a-t-il des clubs étudiants à l'ISET ?", 
-    "rentrée scolaire"
+    "étapes d'inscription",
+    # Frais et bourses
+    "quels sont les frais de scolarité ?",
+    "y a-t-il des bourses ?",
+    # Vie étudiante
+    "vie étudiante",
+    "quels clubs existent à l'EPI ?",
+    "sport à l'EPI",
+    # Stages et débouchés
+    "stages à l'EPI",
+    "quels sont les débouchés après l'EPI ?",
+    "projet de fin d'études",
+    # Infrastructure
+    "laboratoires",
+    "bibliothèque",
+    "transport pour aller à l'EPI",
+    # Contact
+    "comment contacter l'EPI ?",
+    "adresse de l'EPI",
+    # Orientation
+    "quelle filière choisir ?",
+    "certifications professionnelles",
+    # Reconnaissance
+    "l'EPI est-elle reconnue par l'État ?",
+    "portes ouvertes",
+    # Divers
+    "merci",
+    "au revoir",
+    # Question hors sujet (doit renvoyer la réponse par défaut)
+    "quelle est la capitale du Japon ?",
 ]
 
+
+def test_question(question):
+    """Teste une question et affiche le résultat."""
+    print(f"\n{'='*60}")
+    print(f"  Q : {question}")
+    print(f"{'='*60}")
+    try:
+        response = requests.post(BASE_URL, json={"message": question}, timeout=10)
+        if response.status_code == 200:
+            data = response.json()
+            reponse = data.get("reponse", "Pas de réponse")
+            # Tronquer pour l'affichage
+            preview = reponse[:200] + "..." if len(reponse) > 200 else reponse
+            print(f"  R : {preview}")
+            # Vérification basique : la réponse ne doit pas contenir de référence ISET
+            if "ISET" in reponse or "isetsf" in reponse:
+                print("  ⚠  ATTENTION : Référence ISET détectée dans la réponse !")
+                return False
+            return True
+        else:
+            print(f"  ✗ Erreur HTTP : {response.status_code}")
+            return False
+    except requests.exceptions.ConnectionError:
+        print("  ✗ Serveur non accessible. Lancez d'abord : python app.py")
+        return False
+    except Exception as e:
+        print(f"  ✗ Erreur : {e}")
+        return False
+
+
 if __name__ == "__main__":
-    print("Démarrage des tests du chatbot ISET Sfax...\n")
-    
+    print("=" * 60)
+    print("  TESTS DU CHATBOT EPI")
+    print("  École Privée d'Ingénierie et de Technologies")
+    print("=" * 60)
+
+    total = len(QUESTIONS)
+    success = 0
+
     for question in QUESTIONS:
-        test_question(question)
-        sleep(1)  # Pause entre les requêtes
-        
-    print("\nTests terminés.")
+        if test_question(question):
+            success += 1
+        sleep(0.5)
+
+    print(f"\n{'='*60}")
+    print(f"  RÉSULTAT : {success}/{total} tests réussis")
+    if success == total:
+        print("  Tous les tests sont passés avec succès !")
+    else:
+        print(f"  {total - success} test(s) ont échoué.")
+    print(f"{'='*60}")

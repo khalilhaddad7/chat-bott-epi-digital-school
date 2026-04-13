@@ -1,0 +1,676 @@
+{
+  "intents": [
+    {
+      "tag": "salutation",
+      "patterns": [
+        "bonjour", "salut", "hello", "hey", "bonsoir", "coucou", "hi", "salam",
+        "bonsoir à vous", "bonjour à tous", "good morning", "yo", "wesh",
+        "bonjour epi", "salut epi", "bienvenue", "bjr", "slt", "cc",
+        "bsr", "re", "rebonjour", "je viens d'arriver"
+      ],
+      "responses": [
+        "Bonjour ! Bienvenue sur le chatbot de l'EPI – École Privée d'Ingénierie et de Technologies. Comment puis-je vous aider ?",
+        "Salut ! Je suis votre assistant virtuel de l'EPI. Posez-moi vos questions sur les formations, l'inscription, la vie étudiante ou tout autre sujet !",
+        "Bonjour et bienvenue à l'EPI ! Je suis là pour répondre à toutes vos questions concernant notre école. N'hésitez pas !"
+      ]
+    },
+    {
+      "tag": "au_revoir",
+      "patterns": [
+        "bye", "au revoir", "à bientôt", "bonne journée", "bonne soirée", "ciao", "adieu",
+        "à plus", "a+", "bonne nuit", "à la prochaine", "tchao", "salut bye",
+        "je m'en vais", "je dois partir", "merci au revoir", "c'est tout merci"
+      ],
+      "responses": [
+        "Au revoir ! N'hésitez pas à revenir si vous avez d'autres questions. À bientôt !",
+        "À bientôt ! Bonne continuation et n'hésitez pas à consulter notre site episup.com",
+        "Au revoir et merci de votre visite ! L'équipe EPI reste à votre disposition."
+      ]
+    },
+    {
+      "tag": "merci",
+      "patterns": [
+        "merci", "thanks", "thank you", "je vous remercie", "merci beaucoup",
+        "merci bien", "c'est gentil", "super merci", "parfait merci",
+        "ok merci", "d'accord merci", "cool merci", "merci pour l'info",
+        "merci pour les informations", "je te remercie", "shukran"
+      ],
+      "responses": [
+        "Avec plaisir ! N'hésitez pas si vous avez d'autres questions.",
+        "De rien, c'est avec plaisir ! L'EPI est là pour vous accompagner.",
+        "Tout le plaisir est pour moi ! Bonne continuation dans vos démarches."
+      ]
+    },
+    {
+      "tag": "etat",
+      "patterns": [
+        "ça va", "comment ça va", "comment vas-tu", "tu vas bien", "cv",
+        "la forme", "quoi de neuf", "comment tu vas", "ça roule",
+        "tu es en forme", "ça va bien"
+      ],
+      "responses": [
+        "Je vais très bien, merci ! Prêt à répondre à toutes vos questions sur l'EPI.",
+        "Très bien, merci de demander ! Comment puis-je vous aider aujourd'hui ?"
+      ]
+    },
+    {
+      "tag": "identite_bot",
+      "patterns": [
+        "qui es-tu", "tu es qui", "c'est quoi ce chatbot", "comment tu t'appelles",
+        "quel est ton nom", "tu fais quoi", "à quoi tu sers", "qu'est-ce que tu fais",
+        "tu es un robot", "tu es une ia", "tu es humain", "avec qui je parle",
+        "t'es qui toi", "c'est qui", "tu es un bot"
+      ],
+      "responses": [
+        "Je suis l'assistant virtuel de l'EPI – École Privée d'Ingénierie et de Technologies. Je suis conçu pour répondre à vos questions sur les formations, l'admission, la vie étudiante, les stages et tout ce qui concerne l'EPI.\n\nN'hésitez pas à me poser vos questions !",
+        "Je suis le chatbot officiel de l'EPI. Mon rôle est de vous aider à trouver rapidement des informations sur notre école : formations, inscription, frais, débouchés, vie sur le campus, etc.\n\nQue souhaitez-vous savoir ?"
+      ]
+    },
+    {
+      "tag": "presentation_epi",
+      "patterns": [
+        "c'est quoi epi", "qu'est-ce que epi", "présentation epi", "présenter epi",
+        "c'est quoi l'epi", "parle moi de epi", "parlez-moi de l'epi", "epi c'est quoi",
+        "qui est epi", "présentation de l'école", "l'école epi", "episup",
+        "qu'est-ce que l'epi", "définition epi", "connais-tu epi",
+        "donne moi des infos sur epi", "informations epi", "infos sur l'école",
+        "raconte moi l'epi", "histoire de epi", "epi tunisie", "epi école",
+        "je veux connaître epi", "présente moi l'école", "l'epi c'est quoi exactement",
+        "décris moi epi", "en quoi consiste epi", "que fait l'epi",
+        "quel type d'école est epi", "epi privée", "école privée ingénierie"
+      ],
+      "responses": [
+        "L'**EPI** (École Privée d'Ingénierie et de Technologies) est un établissement privé d'enseignement supérieur en Tunisie, agréé par le Ministère de l'Enseignement Supérieur et de la Recherche Scientifique.\n\nL'EPI se distingue par :\n• Des formations d'ingénieurs et de licences dans plusieurs spécialités technologiques\n• Un encadrement pédagogique de qualité avec des classes à taille humaine\n• Des laboratoires modernes et équipés\n• Des partenariats solides avec le monde professionnel\n• Un accompagnement personnalisé des étudiants\n\nSite officiel : https://episup.com/fr",
+        "L'**EPI – École Privée d'Ingénierie et de Technologies** est une école d'ingénieurs privée en Tunisie qui forme des professionnels compétents et prêts à intégrer le marché du travail.\n\nElle offre un environnement d'apprentissage moderne avec des laboratoires équipés, des enseignants qualifiés et un accompagnement personnalisé. L'EPI mise sur l'excellence académique et l'insertion professionnelle de ses diplômés.\n\nPour plus d'informations : https://episup.com/fr"
+      ]
+    },
+    {
+      "tag": "formations",
+      "patterns": [
+        "formations", "filières", "spécialités", "quelles formations", "quels cours",
+        "programme", "programmes", "cursus", "études", "qu'est-ce qu'on peut étudier",
+        "domaines d'études", "licences", "ingénieurs", "diplômes", "quels diplômes",
+        "formation proposée", "formations disponibles", "liste des formations",
+        "quoi étudier à epi", "on étudie quoi", "les études à epi",
+        "offre de formation", "catalogue des formations", "disciplines enseignées",
+        "quels parcours", "les spécialités disponibles", "branches d'études",
+        "cycle ingénieur", "licence appliquée", "formation initiale",
+        "filière informatique génie civil", "toutes les formations",
+        "je veux voir les formations", "montrez moi les formations",
+        "quelles options de formation", "parcours académiques"
+      ],
+      "responses": [
+        "L'EPI propose plusieurs formations :\n\n**Cycle Ingénieur (5 ans) :**\n• Génie Informatique et Systèmes d'Information\n• Génie Civil et BTP\n• Génie Électrique et Systèmes Embarqués\n• Génie Industriel et Management\n\n**Licence Appliquée (3 ans) :**\n• Technologies de l'Informatique\n• Génie Civil\n• Réseaux et Télécommunications\n\nChaque formation allie théorie et pratique avec des stages intégrés au cursus.\n\nPour plus de détails sur chaque programme : https://episup.com/fr"
+      ]
+    },
+    {
+      "tag": "genie_informatique",
+      "patterns": [
+        "génie informatique", "informatique epi", "ingénieur informatique",
+        "développement logiciel", "programmation", "software", "systèmes d'information",
+        "intelligence artificielle", "ia", "cybersécurité", "data science", "big data",
+        "filière informatique", "spécialité informatique", "études informatique",
+        "devenir développeur", "devenir ingénieur informatique", "code", "coder",
+        "apprendre à programmer", "ingénieur en informatique",
+        "machine learning", "deep learning", "web développement",
+        "développeur full stack", "ingénierie logicielle", "génie logiciel",
+        "base de données", "cloud computing informatique", "devops",
+        "je veux faire informatique", "filière info", "branche informatique"
+      ],
+      "responses": [
+        "**Génie Informatique et Systèmes d'Information à l'EPI**\n\nCette filière forme des ingénieurs capables de concevoir, développer et gérer des systèmes informatiques complexes.\n\n**Programme :**\n• Développement logiciel (Java, Python, C++, .NET, JavaScript)\n• Intelligence Artificielle et Machine Learning\n• Cybersécurité et systèmes d'information\n• Big Data et Cloud Computing\n• Développement Web et Mobile\n• Bases de données et architecture logicielle\n• DevOps et déploiement continu\n• Réseaux informatiques\n• Gestion de projets IT (Agile, Scrum)\n\n**Débouchés :**\nDéveloppeur logiciel, architecte SI, ingénieur DevOps, data scientist, consultant cybersécurité, chef de projet IT.\n\nLes diplômés intègrent des entreprises nationales et internationales de premier plan."
+      ]
+    },
+    {
+      "tag": "genie_civil",
+      "patterns": [
+        "génie civil", "btp", "construction", "bâtiment", "travaux publics",
+        "structure", "architecture", "ingénieur civil", "béton", "pont",
+        "route", "chantier", "topographie", "géotechnique",
+        "calcul de structure", "résistance des matériaux", "rdm",
+        "ingénieur btp", "études génie civil", "filière génie civil",
+        "devenir ingénieur civil", "je veux faire génie civil",
+        "urbanisme", "aménagement", "hydraulique", "assainissement",
+        "conducteur de travaux", "bureau d'études"
+      ],
+      "responses": [
+        "**Génie Civil et BTP à l'EPI**\n\nLa filière Génie Civil forme des ingénieurs spécialisés dans la conception et la réalisation d'ouvrages de construction.\n\n**Programme :**\n• Calcul des structures et résistance des matériaux (RDM)\n• Béton armé et construction métallique\n• Topographie et SIG\n• Géotechnique et fondations\n• Hydraulique et assainissement\n• Gestion de projets de construction\n• BIM (Building Information Modeling)\n• Matériaux de construction\n• Routes et ouvrages d'art\n• Normes et réglementation\n\n**Débouchés :**\nIngénieur structure, chef de chantier, conducteur de travaux, ingénieur bureau d'études, consultant BTP.\n\nUne formation pratique avec des projets réels et des stages en entreprise."
+      ]
+    },
+    {
+      "tag": "genie_electrique",
+      "patterns": [
+        "génie électrique", "électronique", "électrotechnique", "systèmes embarqués",
+        "automatique", "automatisme", "électricité", "énergie",
+        "ingénieur électrique", "filière électrique", "études électrique",
+        "robot", "robotique", "iot", "internet des objets",
+        "énergie renouvelable", "solaire", "éolien", "smart grid",
+        "automate programmable", "plc", "arduino", "raspberry",
+        "je veux faire électrique", "devenir ingénieur électrique",
+        "traitement du signal", "capteurs"
+      ],
+      "responses": [
+        "**Génie Électrique et Systèmes Embarqués à l'EPI**\n\nCette filière forme des ingénieurs compétents dans les domaines de l'électronique et des systèmes automatisés.\n\n**Programme :**\n• Électronique analogique et numérique\n• Systèmes embarqués et IoT (Arduino, Raspberry Pi, STM32)\n• Automatique et traitement du signal\n• Énergie renouvelable et efficacité énergétique\n• Robotique industrielle\n• Réseaux électriques intelligents (Smart Grid)\n• Automates programmables (PLC/API)\n• Instrumentation et capteurs\n• Conception de circuits (PCB)\n\n**Débouchés :**\nIngénieur en automatisme, ingénieur en énergie renouvelable, ingénieur systèmes embarqués, ingénieur robotique.\n\nUne formation à la pointe des technologies industrielles modernes."
+      ]
+    },
+    {
+      "tag": "genie_industriel",
+      "patterns": [
+        "génie industriel", "management industriel", "gestion de production",
+        "supply chain", "logistique", "qualité", "lean manufacturing",
+        "ingénieur industriel", "gestion industrielle", "production",
+        "usine", "industrie", "maintenance industrielle", "six sigma",
+        "optimisation", "chaîne d'approvisionnement", "ingénieur qualité",
+        "management de la qualité", "sécurité industrielle"
+      ],
+      "responses": [
+        "**Génie Industriel et Management à l'EPI**\n\nCette filière forme des ingénieurs capables de gérer et optimiser les systèmes de production industrielle.\n\n**Programme :**\n• Gestion de production et planification\n• Supply Chain et logistique\n• Lean Manufacturing et Six Sigma\n• Management de la qualité (ISO 9001)\n• Sécurité industrielle et environnement\n• Maintenance industrielle\n• Gestion de projets\n• Automatisation des processus\n• Analyse de données industrielles\n\n**Débouchés :**\nIngénieur production, responsable qualité, responsable logistique, chef de projet industriel, consultant en optimisation.\n\nUne formation qui combine technique et management."
+      ]
+    },
+    {
+      "tag": "admission",
+      "patterns": [
+        "admission", "inscription", "comment s'inscrire", "comment intégrer",
+        "candidature", "dossier d'inscription", "comment postuler", "intégrer epi",
+        "rejoindre epi", "accès epi", "conditions d'admission", "conditions d'accès",
+        "prérequis", "je veux m'inscrire", "je veux intégrer epi",
+        "je souhaite m'inscrire", "procédure d'inscription",
+        "je voudrais postuler", "comment faire pour s'inscrire",
+        "comment devenir étudiant", "entrer à epi", "accéder à epi",
+        "je suis intéressé par epi", "comment rejoindre votre école",
+        "critères d'admission", "sélection", "concours d'entrée",
+        "est-ce que je peux m'inscrire", "quand s'inscrire",
+        "date limite inscription", "période inscription",
+        "pièces à fournir", "dossier candidature", "les papiers pour s'inscrire",
+        "documents nécessaires", "quels documents pour l'inscription"
+      ],
+      "responses": [
+        "**Procédure d'admission à l'EPI**\n\n**Pour le Cycle Ingénieur :**\n• Baccalauréat scientifique ou technique\n• Dossier de candidature complet\n• Entretien de sélection\n\n**Pour la Licence Appliquée :**\n• Baccalauréat (toutes séries selon la filière)\n• Dossier de candidature\n\n**Pièces à fournir :**\n• Copies certifiées du baccalauréat et des relevés de notes\n• 2 photos d'identité récentes\n• Copie de la CIN ou passeport\n• Formulaire de candidature rempli (disponible en ligne)\n\n**Étapes :**\n1. Remplir le formulaire en ligne sur https://episup.com/fr\n2. Déposer le dossier complet\n3. Passer l'entretien de sélection\n4. Recevoir la confirmation d'admission\n5. Procéder au paiement et à l'inscription définitive\n\nPour toute question : contact@episup.com"
+      ]
+    },
+    {
+      "tag": "bac_requis",
+      "patterns": [
+        "quel bac", "quel baccalauréat", "bac science", "bac technique", "bac info",
+        "bac math", "bac lettres", "bac économie", "bac sport",
+        "quel type de bac", "avec quel bac", "bac nécessaire",
+        "faut-il un bac scientifique", "j'ai un bac lettres",
+        "est-ce que le bac économie suffit", "quelle moyenne au bac",
+        "note minimale bac", "je n'ai pas un bac scientifique",
+        "bac professionnel", "btp bac", "section bac"
+      ],
+      "responses": [
+        "**Baccalauréat requis pour intégrer l'EPI**\n\n**Cycle Ingénieur :**\nBaccalauréat scientifique ou technique recommandé (Maths, Sciences expérimentales, Technique, Informatique). Une bonne moyenne est un atout pour la sélection.\n\n**Licence Appliquée :**\nLe baccalauréat requis varie selon la filière :\n• Technologies de l'Informatique : Bac Maths, Sciences, Technique, Info\n• Génie Civil : Bac Maths, Sciences, Technique\n• Réseaux et Télécommunications : Bac Maths, Sciences, Technique, Info\n\nChaque dossier est étudié individuellement. Même si votre profil ne correspond pas exactement, n'hésitez pas à postuler car l'EPI évalue aussi la motivation et le projet professionnel de chaque candidat.\n\nContactez l'administration pour plus de détails : https://episup.com/fr"
+      ]
+    },
+    {
+      "tag": "frais_scolarite",
+      "patterns": [
+        "frais", "scolarité", "coût", "prix", "tarif", "combien ça coûte",
+        "paiement", "frais d'inscription", "frais de scolarité", "droit d'inscription",
+        "budget", "c'est cher", "coûteux", "abordable", "payer",
+        "montant inscription", "combien pour étudier", "quel est le prix",
+        "tarifs epi", "combien coûte la formation", "coût de la formation",
+        "frais annuels", "combien par an", "le prix des études",
+        "est-ce que c'est payant", "gratuit ou payant",
+        "facilités de paiement", "payer en plusieurs fois",
+        "comment payer", "modes de paiement", "paiement en tranches",
+        "je n'ai pas les moyens", "coût total de la formation"
+      ],
+      "responses": [
+        "**Frais de scolarité à l'EPI**\n\nL'EPI propose des modalités de paiement flexibles pour faciliter l'accès aux études.\n\nLes frais varient selon la filière et le cycle choisi :\n• Cycle Ingénieur (5 ans)\n• Licence Appliquée (3 ans)\n\n**Facilités proposées :**\n• Paiement en plusieurs tranches (mensuelles ou trimestrielles)\n• Plans de financement personnalisés\n• Bourses d'excellence pour les meilleurs profils\n• Réductions possibles selon les résultats académiques\n\n**Aides disponibles :**\n• Bourses d'État (pour les éligibles)\n• Prêts étudiants via les banques partenaires\n\nPour obtenir les tarifs exacts et les conditions :\n• Email : contact@episup.com\n• Site : https://episup.com/fr\n\nN'hésitez pas à contacter notre service des inscriptions pour une simulation personnalisée !"
+      ]
+    },
+    {
+      "tag": "contact",
+      "patterns": [
+        "contact", "téléphone", "adresse", "où se trouve", "localisation",
+        "adresse epi", "comment vous contacter", "numéro", "email", "mail",
+        "joindre epi", "coordonnées", "appeler epi", "envoyer un mail",
+        "comment vous joindre", "numéro de téléphone", "adresse email",
+        "où est epi", "plan d'accès", "google maps", "gps",
+        "contacter l'administration", "accueil epi", "secrétariat",
+        "horaires d'ouverture", "quand est-ce ouvert", "heures de bureau",
+        "réseaux sociaux", "facebook epi", "instagram epi", "linkedin epi",
+        "page facebook", "site web", "site internet", "site officiel"
+      ],
+      "responses": [
+        "**Contactez l'EPI – École Privée d'Ingénierie et de Technologies**\n\n**En ligne :**\n• Site officiel : https://episup.com/fr\n• Email : contact@episup.com\n• Réseaux sociaux : Facebook, Instagram, LinkedIn\n\n**Par téléphone :**\nConsultez le site officiel pour les numéros actualisés.\n\n**Horaires :**\nL'administration est disponible du lundi au vendredi, aux heures de bureau.\n\nPour l'adresse exacte et les itinéraires d'accès, rendez-vous sur notre site web.\n\nN'hésitez pas à nous écrire, nous répondons rapidement !"
+      ]
+    },
+    {
+      "tag": "stages",
+      "patterns": [
+        "stage", "stages", "stage en entreprise", "stage professionnel",
+        "stage de fin d'études", "insertion professionnelle",
+        "recrutement", "stage d'été", "stage obligatoire",
+        "trouver un stage", "chercher un stage", "aide stage",
+        "convention de stage", "durée du stage", "combien dure le stage",
+        "entreprises pour stage", "partenaires de stage",
+        "stage à l'étranger", "stage international",
+        "est-ce qu'il y a des stages", "stages obligatoires",
+        "quand commence le stage", "en quelle année le stage",
+        "j'ai besoin d'un stage", "trouver une entreprise pour le stage"
+      ],
+      "responses": [
+        "**Stages et insertion professionnelle à l'EPI**\n\nL'EPI intègre les stages comme partie essentielle de la formation :\n\n**Types de stages :**\n• Stage d'observation (1ère année) : découverte du monde professionnel\n• Stage technique (2ème et 3ème année) : mise en pratique des compétences\n• Stage de Projet de Fin d'Études (PFE) : 4 à 6 mois en entreprise\n\n**Accompagnement :**\n• Service des stages dédié pour aider les étudiants\n• Partenariats avec des entreprises nationales et internationales\n• Aide à la rédaction du CV et à la préparation des entretiens\n• Suivi pédagogique pendant le stage par un enseignant encadrant\n• Carnet d'adresses d'entreprises partenaires\n\n**Possibilités :**\n• Stages en Tunisie et à l'international\n• Possibilité d'embauche à l'issue du stage\n\nL'EPI maintient des relations étroites avec le tissu économique pour faciliter l'insertion de ses diplômés."
+      ]
+    },
+    {
+      "tag": "pfe",
+      "patterns": [
+        "projet fin d'études", "pfe", "mémoire", "rapport de stage",
+        "soutenance", "jury", "sujet pfe", "thème pfe",
+        "projet de fin d'études", "comment choisir un sujet pfe",
+        "chercher un pfe", "encadrant pfe", "durée pfe",
+        "quand est le pfe", "rapport pfe", "présentation pfe",
+        "soutenir mon pfe", "mémoire de fin d'études",
+        "projet de fin de cycle", "comment se passe le pfe"
+      ],
+      "responses": [
+        "**Projet de Fin d'Études (PFE) à l'EPI**\n\nLe PFE est l'aboutissement du parcours académique :\n\n**Déroulement :**\n• Stage en entreprise de 4 à 6 mois\n• Réalisation d'un projet technique concret répondant à un besoin réel\n• Rédaction d'un rapport détaillé\n• Soutenance devant un jury composé d'enseignants et de professionnels\n\n**Choix du sujet :**\n• Proposé par l'entreprise d'accueil ou par l'étudiant\n• Validé par l'encadrant pédagogique\n• Doit correspondre à la spécialité de l'étudiant\n\n**Encadrement :**\n• Un encadrant académique (enseignant EPI)\n• Un encadrant professionnel (dans l'entreprise)\n• Réunions de suivi régulières\n\n**Évaluation :**\n• Qualité technique du travail\n• Rapport écrit\n• Présentation orale et réponses aux questions du jury\n\nL'EPI accompagne chaque étudiant dans la recherche de son sujet."
+      ]
+    },
+    {
+      "tag": "vie_etudiante",
+      "patterns": [
+        "vie étudiante", "activités", "clubs", "associations", "loisirs",
+        "vie scolaire", "campus", "ambiance", "événements",
+        "vie à epi", "comment c'est à epi", "l'ambiance est bien",
+        "est-ce qu'il y a des activités", "qu'est-ce qu'on fait à epi",
+        "activités parascolaires", "extra scolaire", "activités extra",
+        "junior entreprise", "club robotique", "club informatique",
+        "y a t il des clubs", "quels sont les clubs",
+        "associations étudiantes", "vie associative"
+      ],
+      "responses": [
+        "**Vie étudiante à l'EPI**\n\nL'EPI offre une vie étudiante riche et dynamique !\n\n**Clubs et Associations :**\n• Club Informatique et Innovation\n• Club de Robotique\n• Club de Génie Civil\n• Association sportive\n• Club culturel et artistique\n• Junior Entreprise\n• Club de débat et d'éloquence\n\n**Événements annuels :**\n• Journées Portes Ouvertes\n• Hackathons et concours d'innovation\n• Conférences et séminaires professionnels\n• Journées d'intégration pour les nouveaux\n• Gala de fin d'année\n• Compétitions sportives inter-écoles\n\n**Environnement :**\n• Espaces de coworking et de détente\n• Cafétéria\n• Accès WiFi sur tout le campus\n\nL'EPI encourage l'engagement associatif comme complément essentiel à la formation académique !"
+      ]
+    },
+    {
+      "tag": "sports",
+      "patterns": [
+        "sport", "football", "basketball", "handball", "natation",
+        "salle de sport", "fitness", "activité physique", "volley",
+        "tennis", "musculation", "compétition sportive", "tournoi",
+        "équipe sportive", "je veux faire du sport", "sport à epi"
+      ],
+      "responses": [
+        "**Sports et activités physiques à l'EPI**\n\nL'EPI encourage la pratique sportive :\n\n• Association sportive universitaire active\n• Participation aux compétitions inter-établissements\n• Tournois sportifs (football, basketball, handball, etc.) tout au long de l'année\n• Accès à des installations sportives\n• Journées sportives et team building\n\nL'EPI participe régulièrement aux championnats universitaires tunisiens.\n\nLa pratique sportive est encouragée comme complément essentiel au développement personnel !"
+      ]
+    },
+    {
+      "tag": "partenariats",
+      "patterns": [
+        "partenariats", "entreprises partenaires", "partenaires", "relations internationales",
+        "coopération", "double diplôme", "échange universitaire", "mobilité",
+        "erasmus", "échange étudiant", "partir à l'étranger",
+        "études à l'étranger", "mobilité internationale", "universités partenaires",
+        "accord de partenariat", "convention", "collaboration internationale",
+        "avec quelles entreprises", "quels partenaires"
+      ],
+      "responses": [
+        "**Partenariats de l'EPI**\n\n**Partenariats professionnels :**\n• Grandes entreprises tunisiennes dans les secteurs IT, BTP et industrie\n• Startups et incubateurs tunisiens\n• Entreprises internationales présentes en Tunisie\n\n**Coopération académique internationale :**\n• Accords de partenariat avec des universités européennes\n• Programmes d'échange d'étudiants\n• Possibilités de double diplôme\n• Accueil d'enseignants et conférenciers internationaux\n• Projets de recherche collaboratifs\n\n**Avantages pour les étudiants :**\n• Stages dans des entreprises partenaires\n• Opportunités de mobilité internationale\n• Accès à un réseau professionnel élargi\n• Préparation aux certifications internationales\n\nL'EPI développe continuellement ses partenariats pour offrir les meilleures opportunités.\n\nPlus d'infos : https://episup.com/fr"
+      ]
+    },
+    {
+      "tag": "bourses",
+      "patterns": [
+        "bourse", "bourses", "aide financière", "financement", "réduction",
+        "scholarship", "aide sociale", "allocation", "bourse d'excellence",
+        "bourse d'état", "bourse universitaire", "aide pour payer",
+        "je n'ai pas les moyens", "difficultés financières",
+        "comment obtenir une bourse", "critères bourse",
+        "bourse pour les meilleurs élèves", "mérite", "bourse de mérite",
+        "remise", "rabais", "promotion", "offre spéciale"
+      ],
+      "responses": [
+        "**Bourses et aides financières à l'EPI**\n\nL'EPI propose plusieurs formes d'accompagnement financier :\n\n**Bourses d'excellence :**\n• Réductions pour les bacheliers mention Très Bien\n• Bourses au mérite pour les meilleurs étudiants en cours de scolarité\n• Réductions possibles selon les résultats semestriels\n\n**Facilités de paiement :**\n• Paiement échelonné en plusieurs tranches\n• Plans de financement adaptés à chaque situation\n\n**Aides externes :**\n• Bourse de l'État tunisien (pour les éligibles)\n• Prêts étudiants via les banques partenaires\n• Aides des associations et fondations\n\n**Comment postuler :**\nContactez le service des inscriptions avec votre dossier académique pour connaître les bourses auxquelles vous êtes éligible.\n\nEmail : contact@episup.com"
+      ]
+    },
+    {
+      "tag": "bibliotheque",
+      "patterns": [
+        "bibliothèque", "livres", "documentation", "ressources", "médiathèque",
+        "ressources pédagogiques", "emprunter un livre", "salle de lecture",
+        "étudier à la bibliothèque", "réviser", "ouvrage", "bouquin",
+        "accès aux livres", "bibliothèque en ligne", "ebooks"
+      ],
+      "responses": [
+        "**Bibliothèque et ressources de l'EPI**\n\nL'EPI dispose d'une bibliothèque bien fournie :\n\n• Ouvrages scientifiques et techniques dans toutes les spécialités\n• Revues et journaux scientifiques\n• Ressources numériques et bases de données en ligne\n• Salle de travail en groupe\n• Espace de lecture calme\n• Accès Internet haut débit\n\nLa bibliothèque est ouverte aux étudiants pendant les heures d'ouverture de l'école pour faciliter l'apprentissage et les recherches."
+      ]
+    },
+    {
+      "tag": "laboratoires",
+      "patterns": [
+        "laboratoire", "labo", "laboratoires", "tp", "travaux pratiques",
+        "équipement", "matériel", "salles de tp", "salle informatique",
+        "salle machine", "infrastructure", "installations",
+        "laboratoire informatique", "labo réseau", "labo électronique",
+        "quels équipements", "est-ce bien équipé"
+      ],
+      "responses": [
+        "**Laboratoires et équipements de l'EPI**\n\nL'EPI dispose de laboratoires modernes :\n\n**Informatique :**\n• Salles de TP avec ordinateurs récents\n• Laboratoire de réseaux et cybersécurité\n• Laboratoire d'IA et Data Science\n• Environnements de développement professionnels\n\n**Électronique :**\n• Équipements de mesure et d'analyse (oscilloscopes, analyseurs)\n• Kits de systèmes embarqués (Arduino, Raspberry Pi, STM32)\n• Bancs d'essai automatique\n\n**Génie Civil :**\n• Matériaux de construction et essais\n• Logiciels de CAO et simulation (AutoCAD, SAP2000, ETABS)\n• Laboratoire de topographie\n\nCes installations garantissent une formation pratique de qualité !"
+      ]
+    },
+    {
+      "tag": "logement",
+      "patterns": [
+        "logement", "hébergement", "résidence", "cité universitaire", "foyer",
+        "chambre", "où loger", "habitation", "appartement étudiant",
+        "colocation", "louer un appartement", "foyer universitaire",
+        "je cherche un logement", "où habiter près de epi",
+        "résidence étudiante", "comment trouver un logement"
+      ],
+      "responses": [
+        "**Logement étudiant près de l'EPI**\n\nL'EPI peut vous orienter pour trouver un logement adapté :\n\n**Options disponibles :**\n• Résidences universitaires privées à proximité\n• Chambres et appartements en colocation\n• Cités universitaires publiques (selon disponibilités)\n• Studios et appartements meublés dans le quartier\n\n**Conseils :**\n• Commencez vos recherches tôt (dès l'admission)\n• Renseignez-vous auprès de l'administration qui peut fournir une liste de logements recommandés\n• Les groupes Facebook/WhatsApp des étudiants EPI sont utiles pour trouver des colocations\n\nContactez l'administration : contact@episup.com"
+      ]
+    },
+    {
+      "tag": "restauration",
+      "patterns": [
+        "restauration", "cafétéria", "restaurant", "manger", "repas",
+        "nourriture", "cantine", "snack", "déjeuner", "petit déjeuner",
+        "où manger", "faim", "café", "distributeur", "sandwichs",
+        "resto u", "restaurant universitaire"
+      ],
+      "responses": [
+        "**Restauration à l'EPI**\n\nL'EPI dispose d'espaces de restauration :\n\n• Cafétéria sur le campus avec repas et snacks\n• Espaces de pause et de détente\n• Prix adaptés au budget étudiant\n• Distributeurs automatiques (boissons, snacks)\n\nPlusieurs restaurants et fast-foods se trouvent également à proximité du campus."
+      ]
+    },
+    {
+      "tag": "transport",
+      "patterns": [
+        "transport", "bus", "comment venir", "transports en commun",
+        "voiture", "parking", "comment arriver", "itinéraire",
+        "comment se rendre à epi", "quel bus pour epi",
+        "métro", "taxi", "bolt", "covoiturage",
+        "place de parking", "stationnement"
+      ],
+      "responses": [
+        "**Accès et transport vers l'EPI**\n\nL'EPI est accessible par plusieurs moyens :\n\n• **Transports en commun :** Lignes de bus à proximité\n• **Taxi / VTC :** Bolt, InDriver, Yassir disponibles\n• **Voiture :** Stationnement disponible aux environs du campus\n• **Covoiturage :** Groupes d'étudiants organisés sur WhatsApp\n\nPour l'adresse précise et les itinéraires d'accès :\nhttps://episup.com/fr"
+      ]
+    },
+    {
+      "tag": "planning",
+      "patterns": [
+        "emploi du temps", "planning", "horaires", "schedule", "agenda",
+        "calendrier", "quand sont les cours", "heure des cours",
+        "emploi du temps epi", "horaires de cours", "quand commence le semestre",
+        "rentrée scolaire", "rentrée universitaire", "début des cours",
+        "vacances", "jours fériés", "semaine de révision", "période d'examens"
+      ],
+      "responses": [
+        "**Organisation académique à l'EPI**\n\nL'EPI organise ses cours de manière structurée :\n\n**Types d'enseignement :**\n• Cours magistraux (CM) : en amphi ou salle de cours\n• Travaux Dirigés (TD) : petits groupes\n• Travaux Pratiques (TP) : en laboratoire\n\n**Communication :**\nL'emploi du temps est communiqué en début de chaque semestre via le portail étudiant en ligne et par affichage.\n\n**Calendrier académique :**\n• Deux semestres par an\n• Sessions d'examens à la fin de chaque semestre\n• Session de rattrapage\n• Périodes de vacances scolaires\n\nConnectez-vous à votre espace étudiant pour accéder à votre emploi du temps."
+      ]
+    },
+    {
+      "tag": "resultats",
+      "patterns": [
+        "résultats", "notes", "bulletin", "relevé de notes", "résultats examens",
+        "examens", "contrôle", "validation", "réussir", "échouer", "rattrapage",
+        "mes notes", "voir mes résultats", "comment consulter les notes",
+        "relevé", "attestation de réussite", "moyenne", "moyenne requise",
+        "j'ai raté un examen", "session de rattrapage",
+        "comment valider", "nombre de crédits", "ECTS", "passage"
+      ],
+      "responses": [
+        "**Résultats et évaluations à l'EPI**\n\n**Système d'évaluation :**\n• Contrôles continus (DS, devoirs, TP notés)\n• Examens de fin de semestre\n• Projets et travaux pratiques\n• Soutenances et rapports de stage\n\n**Accès aux résultats :**\n• Via le portail étudiant en ligne\n• Affichage dans les locaux de l'école\n\n**Rattrapage :**\nUne session de rattrapage est organisée pour les étudiants n'ayant pas validé certaines matières.\n\n**Conseil :**\nContactez votre responsable pédagogique pour tout renseignement sur vos notes ou votre situation académique."
+      ]
+    },
+    {
+      "tag": "reseaux_telecom",
+      "patterns": [
+        "réseaux", "télécommunications", "télécom", "réseau informatique",
+        "cisco", "sécurité réseau", "filière réseaux", "études réseaux",
+        "administration réseau", "réseau et télécom", "devenir admin réseau",
+        "ccna", "devenir ingénieur réseau", "5g", "4g",
+        "fibre optique", "switching", "routing"
+      ],
+      "responses": [
+        "**Réseaux et Télécommunications à l'EPI**\n\nCette filière forme des spécialistes des réseaux et des systèmes de communication.\n\n**Programme :**\n• Administration des réseaux (LAN, WAN, WiFi)\n• Sécurité informatique et cybersécurité\n• Protocoles réseau (TCP/IP, OSPF, BGP)\n• Cloud Computing et virtualisation\n• Télécommunications mobiles (4G/5G)\n• Fibre optique et technologies d'accès\n• Switching et Routing avancé\n• Administration systèmes (Linux, Windows Server)\n\n**Certifications :**\nLes étudiants sont préparés aux certifications Cisco (CCNA, CCNP) et autres.\n\n**Débouchés :**\nAdministrateur réseau, ingénieur télécoms, consultant cybersécurité, architecte cloud."
+      ]
+    },
+    {
+      "tag": "masters",
+      "patterns": [
+        "master", "mastère", "post-licence", "post-ingénieur", "troisième cycle",
+        "doctorat", "phd", "thèse", "recherche", "après la licence",
+        "continuer les études", "poursuite d'études", "bac+5", "bac+8",
+        "diplôme supérieur", "études supérieures après epi",
+        "master professionnel", "master recherche",
+        "est-ce que je peux faire un master", "formation continue"
+      ],
+      "responses": [
+        "**Cycles supérieurs après l'EPI**\n\nAprès l'obtention de votre diplôme à l'EPI, plusieurs options s'offrent à vous :\n\n**Poursuite d'études :**\n• Masters et mastères professionnels\n• Masters de recherche\n• Doctorat / PhD\n• Formations complémentaires et spécialisations\n\n**Partenariats académiques :**\n• Universités françaises et européennes partenaires\n• Possibilités de double diplôme\n• Mobilité internationale\n\n**Formation continue :**\n• L'EPI propose des formations pour les professionnels en activité\n\nContactez l'EPI pour connaître les options disponibles et les partenariats actuels :\n• Email : contact@episup.com\n• Site : https://episup.com/fr"
+      ]
+    },
+    {
+      "tag": "orientation",
+      "patterns": [
+        "orientation", "conseil", "quelle filière choisir", "quoi faire",
+        "m'orienter", "aide pour choisir", "quel cursus", "que faire après le bac",
+        "je suis perdu", "je ne sais pas quoi choisir", "hésiter entre",
+        "j'hésite entre informatique et civil", "quelle est la meilleure filière",
+        "quelle filière a le plus de débouchés", "me conseiller",
+        "je ne sais pas quelle spécialité", "aidez moi à choisir",
+        "je ne sais pas quoi étudier", "différence entre les filières"
+      ],
+      "responses": [
+        "**Orientation à l'EPI**\n\nChoisir la bonne filière est une décision importante ! Voici quelques pistes :\n\n**Si vous aimez la programmation et les nouvelles technologies :**\n→ Génie Informatique et Systèmes d'Information\n\n**Si vous êtes passionné par la construction et l'architecture :**\n→ Génie Civil et BTP\n\n**Si l'électronique et les systèmes automatisés vous attirent :**\n→ Génie Électrique et Systèmes Embarqués\n\n**Si vous souhaitez gérer des projets industriels :**\n→ Génie Industriel et Management\n\n**Si les réseaux et la cybersécurité vous passionnent :**\n→ Réseaux et Télécommunications\n\n**Conseil :**\nN'hésitez pas à assister aux Journées Portes Ouvertes pour découvrir chaque filière en détail, rencontrer les enseignants et les étudiants.\n\nL'équipe pédagogique est disponible pour une orientation personnalisée : contact@episup.com"
+      ]
+    },
+    {
+      "tag": "certifications",
+      "patterns": [
+        "certification", "certifications", "diplôme professionnel", "cisco",
+        "microsoft", "oracle", "aws", "comptia", "ccna", "ccnp",
+        "azure", "google cloud", "pmp", "scrum", "agile",
+        "certification professionnelle", "certif", "passer une certification",
+        "est-ce que epi prépare aux certifications"
+      ],
+      "responses": [
+        "**Certifications professionnelles à l'EPI**\n\nL'EPI encourage et prépare ses étudiants aux certifications reconnues mondialement :\n\n**Informatique & Réseaux :**\n• Cisco (CCNA, CCNP)\n• Microsoft (Azure, Office 365)\n• AWS Cloud Practitioner\n• CompTIA Security+\n• Oracle Certified Associate\n\n**Management & Gestion :**\n• PMP (Project Management Professional)\n• Certifications Agile/Scrum (PSM, PSPO)\n\n**Avantages :**\n• Renforce votre CV et votre employabilité\n• Reconnaissance internationale\n• Préparation intégrée au cursus\n\nCes certifications constituent un atout majeur sur le marché du travail !"
+      ]
+    },
+    {
+      "tag": "debouches",
+      "patterns": [
+        "débouchés", "après les études", "métiers", "carrière",
+        "après epi", "que faire après", "opportunités emploi",
+        "taux d'emploi", "insertion professionnelle", "trouver du travail",
+        "est-ce que je vais trouver du travail", "est-ce facile de trouver un emploi",
+        "salaire après epi", "combien gagne un diplômé",
+        "quels métiers", "quel travail après", "secteurs d'activité",
+        "perspectives professionnelles", "avenir professionnel",
+        "le diplôme epi est-il reconnu par les employeurs"
+      ],
+      "responses": [
+        "**Débouchés professionnels après l'EPI**\n\nLes diplômés de l'EPI exercent dans de nombreux secteurs :\n\n**Ingénieurs en Informatique :**\n• Développeur / Architecte logiciel\n• Ingénieur DevOps / Cloud\n• Analyste Cybersécurité\n• Data Scientist / IA Engineer\n• Chef de projet IT\n• Consultant en transformation digitale\n\n**Ingénieurs en Génie Civil :**\n• Ingénieur structure / BTP\n• Chef de chantier / Conducteur de travaux\n• Ingénieur bureau d'études techniques\n• Consultant en construction\n\n**Ingénieurs Électriques :**\n• Ingénieur en automatisme\n• Ingénieur en énergie renouvelable\n• Ingénieur en systèmes embarqués / IoT\n\n**Ingénieurs Industriels :**\n• Responsable production / qualité\n• Responsable Supply Chain / logistique\n\n**Employeurs :**\nLes diplômés travaillent en Tunisie et à l'international, dans des entreprises de toutes tailles (startups, PME, multinationales).\n\nLe taux d'insertion professionnelle des diplômés de l'EPI est très élevé."
+      ]
+    },
+    {
+      "tag": "aide",
+      "patterns": [
+        "aide", "help", "aidez-moi", "j'ai besoin d'aide", "comment faire",
+        "je ne comprends pas", "pouvez-vous m'aider", "tu peux m'aider",
+        "je suis perdu", "que puis-je demander", "quoi demander",
+        "comment ça marche", "mode d'emploi", "que sais-tu faire",
+        "quelles sont tes capacités", "tu peux répondre à quoi"
+      ],
+      "responses": [
+        "Bien sûr, je suis là pour vous aider ! Voici ce sur quoi je peux vous renseigner :\n\n• **Présentation de l'EPI** – Notre école, ses valeurs, sa mission\n• **Formations et filières** – Informatique, Génie Civil, Électrique, Industriel, Réseaux\n• **Admission et inscription** – Conditions, documents, étapes\n• **Frais de scolarité** – Tarifs, bourses, facilités de paiement\n• **Vie étudiante** – Clubs, associations, événements, sports\n• **Stages et PFE** – Stages en entreprise, projet de fin d'études\n• **Débouchés** – Métiers, insertion professionnelle, carrière\n• **Contact** – Adresse, téléphone, email, réseaux sociaux\n• **Laboratoires et infrastructure** – Équipements, bibliothèque\n• **Partenariats et mobilité** – International, entreprises\n\nPosez votre question !"
+      ]
+    },
+    {
+      "tag": "capacite_accueil",
+      "patterns": [
+        "nombre d'étudiants", "combien d'étudiants", "capacité", "effectif",
+        "promotions", "taille des classes", "combien d'élèves par classe",
+        "petit groupe", "classes surchargées", "effectif limité",
+        "combien de places"
+      ],
+      "responses": [
+        "**Effectifs et capacité d'accueil de l'EPI**\n\nL'EPI maintient des effectifs limités pour assurer une formation de qualité :\n\n• Classes à taille humaine (20 à 30 étudiants en TD/TP)\n• Encadrement personnalisé\n• Suivi pédagogique individualisé\n• Ratio enseignant/étudiant favorable\n\nCette approche permet à chaque étudiant de bénéficier d'une attention particulière.\n\nPour les chiffres exacts : https://episup.com/fr"
+      ]
+    },
+    {
+      "tag": "corps_enseignant",
+      "patterns": [
+        "professeurs", "enseignants", "corps enseignant", "encadrement",
+        "équipe pédagogique", "formateurs", "faculté", "profs",
+        "qui enseigne", "qualité des enseignants", "enseignant epi",
+        "docteur", "professeur universitaire"
+      ],
+      "responses": [
+        "**Corps enseignant de l'EPI**\n\nL'EPI dispose d'un corps enseignant de haut niveau :\n\n• Docteurs et Professeurs d'université expérimentés\n• Ingénieurs et praticiens du monde professionnel\n• Experts nationaux et internationaux\n• Intervenants professionnels issus de grandes entreprises\n\nCette combinaison d'académiciens et de professionnels garantit une formation à la fois rigoureuse sur le plan théorique et adaptée aux réalités du marché du travail.\n\nPour plus d'informations : https://episup.com/fr"
+      ]
+    },
+    {
+      "tag": "reconnaissance",
+      "patterns": [
+        "accréditation", "reconnaissance", "agréé", "ministère", "diplôme reconnu",
+        "validité diplôme", "équivalence", "est-ce reconnu", "diplôme valable",
+        "le diplôme est-il reconnu", "reconnaissance du diplôme",
+        "diplôme epi reconnu à l'étranger", "fonction publique",
+        "école privée agréée", "agrément"
+      ],
+      "responses": [
+        "**Reconnaissance et accréditation de l'EPI**\n\nL'EPI est un établissement **agréé par le Ministère de l'Enseignement Supérieur et de la Recherche Scientifique tunisien**.\n\n**Ce que cela signifie :**\n• Les diplômes délivrés sont officiellement reconnus par l'État tunisien\n• Équivalence possible avec des diplômes étrangers\n• Accès aux concours de la fonction publique\n• Reconnaissance par les employeurs nationaux et internationaux\n• Possibilité de poursuivre les études en Master/Doctorat\n\nPour toute information sur l'accréditation :\nhttps://episup.com/fr"
+      ]
+    },
+    {
+      "tag": "portes_ouvertes",
+      "patterns": [
+        "portes ouvertes", "journée portes ouvertes", "visite", "découverte",
+        "visiter", "open day", "journée découverte", "visite du campus",
+        "je veux visiter epi", "quand sont les portes ouvertes",
+        "prochaine journée portes ouvertes", "visite guidée"
+      ],
+      "responses": [
+        "**Journées Portes Ouvertes de l'EPI**\n\nL'EPI organise régulièrement des Journées Portes Ouvertes :\n\n**Au programme :**\n• Visite des locaux et des laboratoires\n• Rencontre avec les enseignants et les étudiants\n• Présentations détaillées des filières\n• Démonstrations techniques\n• Séance de questions-réponses\n• Conseils d'orientation personnalisés\n\nC'est l'occasion idéale pour découvrir l'EPI en personne !\n\nPour connaître les prochaines dates :\n• Site : https://episup.com/fr\n• Suivez-nous sur les réseaux sociaux (Facebook, Instagram)"
+      ]
+    },
+    {
+      "tag": "etranger",
+      "patterns": [
+        "étudiant étranger", "étranger", "international", "étudiant international",
+        "je viens de l'étranger", "je ne suis pas tunisien",
+        "étudiants africains", "visa étudiant", "carte de séjour",
+        "inscription étrangers", "admission pour les étrangers",
+        "est-ce ouvert aux étrangers", "conditions pour les internationaux"
+      ],
+      "responses": [
+        "**Étudiants internationaux à l'EPI**\n\nL'EPI accueille les étudiants internationaux !\n\n**Conditions :**\n• Équivalence du baccalauréat ou du diplôme étranger\n• Dossier de candidature complet\n• Maîtrise du français (langue d'enseignement)\n\n**Documents supplémentaires :**\n• Passeport en cours de validité\n• Équivalence des diplômes (traduite et certifiée)\n• Visa étudiant (si requis selon la nationalité)\n\n**Accompagnement :**\n• Aide aux démarches administratives\n• Assistance pour le logement\n• Intégration facilitée\n\nContactez-nous pour les modalités spécifiques : contact@episup.com\nhttps://episup.com/fr"
+      ]
+    },
+    {
+      "tag": "transfert",
+      "patterns": [
+        "transfert", "changer d'école", "mutation", "passerelle",
+        "venir d'une autre école", "équivalence de diplôme",
+        "réorientation", "je veux changer de filière", "changer de spécialité",
+        "est-ce que je peux transférer", "admettre en cours de cursus",
+        "intégrer en 2ème année", "intégrer en 3ème année", "admission parallèle"
+      ],
+      "responses": [
+        "**Transfert et admission parallèle à l'EPI**\n\nL'EPI accepte les transferts et les admissions parallèles :\n\n**Possibilités :**\n• Transfert depuis une autre école d'ingénieurs ou université\n• Admission en cours de cursus (2ème, 3ème année, etc.)\n• Réorientation entre filières (sous conditions)\n\n**Conditions :**\n• Étude du dossier académique au cas par cas\n• Équivalence des matières déjà validées\n• Entretien de motivation\n• Validation par la commission pédagogique\n\n**Procédure :**\nContactez directement l'administration avec votre relevé de notes et un descriptif des matières suivies.\n\nEmail : contact@episup.com"
+      ]
+    },
+    {
+      "tag": "wifi_informatique",
+      "patterns": [
+        "wifi", "internet", "connexion", "réseau wifi", "mot de passe wifi",
+        "accès internet", "wifi campus", "wifi epi", "se connecter au wifi",
+        "plateforme en ligne", "espace étudiant", "portail étudiant",
+        "e-learning", "cours en ligne", "plateforme e-learning"
+      ],
+      "responses": [
+        "**Connectivité et services numériques à l'EPI**\n\n**WiFi :**\n• Accès WiFi disponible sur tout le campus\n• Connexion haut débit pour les étudiants et le personnel\n\n**Services numériques :**\n• Portail étudiant en ligne (emploi du temps, notes, actualités)\n• Accès aux ressources pédagogiques numériques\n• Salles informatiques en libre accès\n\nPour les identifiants d'accès (WiFi et portail), contactez le service informatique ou l'administration."
+      ]
+    },
+    {
+      "tag": "regle_discipline",
+      "patterns": [
+        "règlement", "discipline", "règles", "charte", "règlement intérieur",
+        "code de conduite", "absence", "retard", "sanction", "exclusion",
+        "présence obligatoire", "tenue vestimentaire", "assiduité",
+        "est-ce que la présence est obligatoire", "combien d'absences autorisées"
+      ],
+      "responses": [
+        "**Règlement intérieur de l'EPI**\n\n**Assiduité :**\n• La présence aux cours, TD et TP est obligatoire\n• Les absences injustifiées peuvent entraîner des sanctions\n• Un suivi rigoureux de l'assiduité est assuré\n\n**Règles générales :**\n• Respect des enseignants, du personnel et des autres étudiants\n• Respect des équipements et des locaux\n• Interdiction de fumer dans les bâtiments\n• Tenue correcte exigée\n\n**Conseil :**\nUn règlement intérieur détaillé est remis à chaque étudiant lors de l'inscription. Consultez-le attentivement.\n\nPour toute question, adressez-vous à l'administration."
+      ]
+    },
+    {
+      "tag": "duree_formation",
+      "patterns": [
+        "combien d'années", "durée des études", "durée de la formation",
+        "c'est combien d'ans", "nombre d'années", "durée du cursus",
+        "combien de temps", "combien de semestres",
+        "3 ans ou 5 ans", "5 ans d'études", "3 ans d'études"
+      ],
+      "responses": [
+        "**Durée des formations à l'EPI**\n\n**Cycle Ingénieur : 5 ans**\n• 2 ans de cycle préparatoire (tronc commun)\n• 3 ans de cycle ingénieur (spécialité)\n• Inclut des stages tout au long du cursus\n• Diplôme d'Ingénieur délivré à la fin\n\n**Licence Appliquée : 3 ans**\n• 6 semestres\n• Formation théorique et pratique\n• Stages intégrés\n• Diplôme de Licence Appliquée\n\nChaque formation inclut des stages obligatoires et un projet de fin d'études."
+      ]
+    },
+    {
+      "tag": "langues",
+      "patterns": [
+        "langue d'enseignement", "français", "anglais", "arabe",
+        "en quelle langue", "cours en français", "cours en anglais",
+        "langues enseignées", "faut-il parler français", "niveau de français",
+        "toefl", "toeic", "langue étrangère"
+      ],
+      "responses": [
+        "**Langues à l'EPI**\n\n**Langue d'enseignement :**\nLes cours sont dispensés principalement en français.\n\n**Langues enseignées :**\n• Français (communication professionnelle, rédaction technique)\n• Anglais (anglais technique, communication, TOEIC)\n• Arabe (selon les besoins)\n\n**Conseil :**\nUne bonne maîtrise du français est importante pour suivre les cours. L'anglais technique est également essentiel dans les domaines d'ingénierie.\n\nL'EPI peut proposer des cours de renforcement linguistique si nécessaire."
+      ]
+    },
+    {
+      "tag": "temoignages",
+      "patterns": [
+        "témoignage", "avis", "retour d'expérience", "anciens étudiants",
+        "alumni", "diplômés", "que pensent les étudiants",
+        "est-ce une bonne école", "avis sur epi", "recommandation",
+        "qualité de la formation", "satisfaction des étudiants",
+        "est-ce que epi est bien", "epi vaut le coup"
+      ],
+      "responses": [
+        "**Avis et témoignages sur l'EPI**\n\nLes étudiants et diplômés de l'EPI apprécient particulièrement :\n\n• **L'encadrement personnalisé** : des classes à taille humaine favorisant l'échange\n• **La qualité des enseignants** : un mélange d'académiciens et de professionnels\n• **Les stages** : facilités grâce au réseau de partenaires\n• **L'ambiance** : une vie étudiante dynamique et conviviale\n• **L'insertion professionnelle** : un bon taux d'emploi après la diplomation\n\nPour découvrir des témoignages d'anciens étudiants et en savoir plus :\nhttps://episup.com/fr\n\nN'hésitez pas à venir visiter l'EPI lors des Journées Portes Ouvertes !"
+      ]
+    },
+    {
+      "tag": "covid_hybride",
+      "patterns": [
+        "covid", "cours en ligne", "enseignement à distance", "hybride",
+        "distanciel", "présentiel", "est-ce en présentiel",
+        "cours à distance", "zoom", "teams", "google meet"
+      ],
+      "responses": [
+        "**Modalités d'enseignement à l'EPI**\n\nL'EPI privilégie l'enseignement en présentiel pour garantir la qualité de la formation et l'interaction directe entre étudiants et enseignants.\n\nL'école dispose également d'outils numériques pour compléter l'enseignement :\n• Plateforme e-learning pour les ressources complémentaires\n• Supports de cours numériques\n• Possibilité de cours hybrides si les circonstances l'exigent\n\nL'objectif reste de maintenir un enseignement de qualité avec un maximum de pratique en laboratoire."
+      ]
+    },
+    {
+      "tag": "securite",
+      "patterns": [
+        "sécurité", "sûreté", "gardien", "surveillance", "sécurisé",
+        "camera", "est-ce sécurisé", "vol", "sécurité du campus"
+      ],
+      "responses": [
+        "**Sécurité sur le campus de l'EPI**\n\nL'EPI assure un environnement sécurisé pour ses étudiants :\n\n• Service de sécurité présent sur le campus\n• Système de surveillance\n• Contrôle d'accès aux bâtiments\n• Environnement calme et propice aux études\n\nLa sécurité et le bien-être des étudiants sont une priorité pour l'EPI."
+      ]
+    },
+    {
+      "tag": "avantages_epi",
+      "patterns": [
+        "pourquoi epi", "avantages epi", "pourquoi choisir epi",
+        "points forts", "atouts de epi", "qu'est-ce qui distingue epi",
+        "epi vs public", "epi ou public", "privé ou public",
+        "avantage école privée", "différence privé public",
+        "pourquoi une école privée", "vaut la peine"
+      ],
+      "responses": [
+        "**Pourquoi choisir l'EPI ?**\n\nL'EPI se distingue par de nombreux atouts :\n\n**Qualité pédagogique :**\n• Classes à taille humaine (meilleur suivi)\n• Enseignants qualifiés (docteurs + professionnels)\n• Programmes actualisés selon les besoins du marché\n\n**Pratique et professionnalisation :**\n• Stages dès la 1ère année\n• Laboratoires modernes et bien équipés\n• Projets concrets et PFE en entreprise\n• Préparation aux certifications internationales\n\n**Accompagnement :**\n• Suivi personnalisé de chaque étudiant\n• Service d'orientation et d'aide au stage\n• Réseau d'anciens diplômés actif\n\n**Ouverture internationale :**\n• Partenariats avec des universités étrangères\n• Possibilités de mobilité et double diplôme\n\n**Insertion professionnelle :**\n• Taux d'emploi élevé\n• Partenariats solides avec les entreprises\n\nDécouvrez l'EPI : https://episup.com/fr"
+      ]
+    }
+  ]
+}

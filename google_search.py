@@ -11,7 +11,7 @@ class GoogleSearcher:
         self.api_key = api_key
         self.cse_id = cse_id
         self.base_url = "https://www.googleapis.com/customsearch/v1"
-        self.location = "iset sfax"
+        self.location = "EPI école privée ingénierie technologies Tunisie"
     def search(self, query, site=None, num_results=3):
         """Effectue une recherche Google"""
         if not self.api_key or not self.cse_id:
@@ -37,11 +37,11 @@ class GoogleSearcher:
     def fallback_search(self, query, site=None):
         """Solution de repli sans API"""
         full_query = f"{query} {self.location}"
-        search_url = f"https://www.google.com/search?q={quote(query)}"
+        search_url = f"https://www.google.com/search?q={quote(full_query)}"
         return [{
             'title': f"Recherche Google: {query}",
             'link': search_url,
-            'snippet': f"Cliquez pour voir les résultats de recherche Google pour '{query}'"
+            'snippet': f"Cliquez pour voir les résultats de recherche Google pour '{query}' concernant l'EPI"
         }]
     
     def format_results(self, google_data):
@@ -56,8 +56,8 @@ class GoogleSearcher:
 
 if __name__ == '__main__':
     # Configuration (à remplacer par vos clés réelles)
-    API_KEY = "AIzaSyARc-noNwxYpnX28_L4IILVl5zqhp3EIOs"
-    CSE_ID = "d63b4fdd2d76b4ab6"
+    API_KEY = "AIzaSyCnBw3XHDOtJziMknU6fcbOrvHGE5F_QNA"
+    CSE_ID = "72e49c9788d9740d0"
     
     # Initialisation
     searcher = GoogleSearcher(api_key=API_KEY, cse_id=CSE_ID)

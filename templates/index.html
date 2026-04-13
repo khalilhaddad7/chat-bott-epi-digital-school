@@ -3,69 +3,120 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Chatbot ISET - Assistance étudiante</title>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+  <title>EPI Chatbot – Assistant Virtuel</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
   <style>
     :root {
-      --primary-color: #2c3e50;
-      --secondary-color: #3498db;
-      --accent-color: #e74c3c;
-      --light-color: #ecf0f1;
-      --dark-color: #2c3e50;
-      --success-color: #27ae60;
-      --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      --primary-color: #b71c1c;
+      --secondary-color: #d32f2f;
+      --accent-color: #ff5252;
+      --light-color: #fce4ec;
+      --dark-color: #4e0000;
+      --success-color: #2e7d32;
+      --bg-color: #faf5f5;
+      --border-color: #e0b0b0;
+      --shadow: 0 4px 12px rgba(183, 28, 28, 0.15);
     }
 
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
 
     body {
       font-family: 'Open Sans', sans-serif;
-      background-color: #f5f7fa;
-      color: var(--dark-color);
+      background-color: var(--bg-color);
+      color: #333;
       line-height: 1.6;
       display: flex;
       flex-direction: column;
       min-height: 100vh;
     }
 
+    /* ── HEADER ── */
     .header {
-      background-color: var(--primary-color);
+      background: linear-gradient(135deg, #b71c1c 0%, #c62828 50%, #d32f2f 100%);
       color: white;
-      padding: 1.5rem;
-      text-align: center;
+      padding: 1.2rem 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
       box-shadow: var(--shadow);
     }
 
-    .header h1 {
+    .header-brand {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .header-logo {
+      width: 56px;
+      height: 56px;
+      background: white;
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.6rem;
+      font-weight: 700;
+      color: var(--primary-color);
+      letter-spacing: -1px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+      flex-shrink: 0;
+    }
+
+    .header-text h1 {
       font-family: 'Roboto', sans-serif;
-      font-weight: 500;
-      font-size: 1.8rem;
-      margin-bottom: 0.5rem;
+      font-weight: 700;
+      font-size: 1.4rem;
     }
 
-    .header p {
-      font-size: 1rem;
-      opacity: 0.9;
+    .header-text p {
+      font-size: 0.85rem;
+      opacity: 0.85;
+      margin-top: 2px;
     }
 
+    .header-badge {
+      background: rgba(255,255,255,0.15);
+      border: 1px solid rgba(255,255,255,0.3);
+      border-radius: 20px;
+      padding: 0.4rem 1rem;
+      font-size: 0.8rem;
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+
+    .status-dot {
+      width: 8px;
+      height: 8px;
+      background: #69f0ae;
+      border-radius: 50%;
+      animation: pulse 2s infinite;
+    }
+
+    @keyframes pulse {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.6; transform: scale(1.2); }
+    }
+
+    /* ── LAYOUT ── */
     .main-container {
       display: flex;
       flex-grow: 1;
       overflow: hidden;
+      height: calc(100vh - 80px - 50px);
     }
 
+    /* ── SIDEBAR ── */
     .history-sidebar {
-      width: 300px;
+      width: 280px;
       background-color: white;
-      border-right: 1px solid #e9ecef;
+      border-right: 1px solid var(--border-color);
       overflow-y: auto;
       padding: 1rem;
       display: flex;
       flex-direction: column;
+      flex-shrink: 0;
     }
 
     .history-header {
@@ -73,46 +124,52 @@
       justify-content: space-between;
       align-items: center;
       margin-bottom: 1rem;
-      padding-bottom: 0.5rem;
-      border-bottom: 1px solid #e9ecef;
+      padding-bottom: 0.75rem;
+      border-bottom: 2px solid var(--light-color);
     }
 
     .history-title {
-      font-weight: 600;
-      font-size: 1.1rem;
+      font-weight: 700;
+      font-size: 0.95rem;
+      color: var(--primary-color);
     }
 
     .history-actions {
       display: flex;
-      gap: 0.5rem;
+      gap: 0.4rem;
     }
 
     .history-button {
       background: none;
-      border: none;
+      border: 1px solid transparent;
       cursor: pointer;
-      font-size: 0.8rem;
-      padding: 0.3rem 0.5rem;
-      border-radius: 4px;
+      font-size: 0.75rem;
+      padding: 0.3rem 0.6rem;
+      border-radius: 6px;
       display: flex;
       align-items: center;
       gap: 0.3rem;
+      transition: all 0.2s;
+      font-family: 'Open Sans', sans-serif;
     }
 
     .new-chat-button {
       color: var(--secondary-color);
+      border-color: var(--border-color);
     }
-
     .new-chat-button:hover {
-      background-color: #f0f7ff;
+      background-color: var(--light-color);
+      border-color: var(--secondary-color);
     }
 
     .clear-history {
-      color: var(--accent-color);
+      color: #999;
+      border-color: #ddd;
     }
-
     .clear-history:hover {
       background-color: #fff0f0;
+      color: var(--accent-color);
+      border-color: var(--accent-color);
     }
 
     .history-list {
@@ -121,808 +178,943 @@
     }
 
     .history-item {
-      padding: 0.8rem;
-      margin-bottom: 0.5rem;
+      padding: 0.6rem 0.7rem;
+      margin-bottom: 0.35rem;
       border-radius: 8px;
       cursor: pointer;
-      transition: background-color 0.2s;
+      transition: all 0.2s;
       border-left: 3px solid transparent;
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
     }
-
     .history-item:hover {
-      background-color: #f8f9fa;
+      background-color: var(--light-color);
+    }
+    .history-item.active {
+      background-color: var(--light-color);
+      border-left-color: var(--secondary-color);
     }
 
-    .history-item.active {
-      background-color: #f0f7ff;
-      border-left: 3px solid var(--secondary-color);
+    .history-item-content {
+      flex-grow: 1;
+      min-width: 0;
     }
 
     .history-question {
-      font-weight: 500;
+      font-weight: 600;
+      font-size: 0.82rem;
       white-space: nowrap;
       overflow: hidden;
       text-overflow: ellipsis;
+      color: #333;
     }
 
     .history-date {
-      font-size: 0.7rem;
-      color: #7f8c8d;
-      margin-top: 0.3rem;
+      font-size: 0.68rem;
+      color: #aaa;
+      margin-top: 0.15rem;
+    }
+
+    .history-delete {
+      background: none;
+      border: none;
+      cursor: pointer;
+      font-size: 0.85rem;
+      color: #ccc;
+      padding: 0.2rem;
+      border-radius: 4px;
+      transition: all 0.2s;
+      flex-shrink: 0;
+      line-height: 1;
+    }
+    .history-delete:hover {
+      color: var(--accent-color);
+      background: #fff0f0;
+    }
+
+    .no-history {
+      text-align: center;
+      padding: 2rem 1rem;
+      color: #bbb;
+      font-size: 0.85rem;
+    }
+    .no-history span {
+      font-size: 2rem;
+      display: block;
+      margin-bottom: 0.5rem;
+    }
+
+    /* ── CHAT AREA ── */
+    .chat-wrapper {
+      flex-grow: 1;
+      display: flex;
+      flex-direction: column;
+      padding: 1.5rem;
+      gap: 1rem;
+      overflow: hidden;
     }
 
     .chat-container {
-      flex-grow: 1;
-      max-width: 800px;
-      margin: 2rem auto;
       background: white;
-      border-radius: 10px;
+      border-radius: 16px;
       box-shadow: var(--shadow);
       overflow: hidden;
       display: flex;
       flex-direction: column;
-      height: calc(100vh - 200px);
+      flex-grow: 1;
+    }
+
+    .chat-header-bar {
+      background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+      color: white;
+      padding: 0.75rem 1.2rem;
+      font-size: 0.85rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
     }
 
     .chat-history {
       padding: 1.5rem;
       overflow-y: auto;
       flex-grow: 1;
-      min-height: 300px;
-      max-height: 60vh;
+    }
+
+    /* ── MESSAGES ── */
+    .message-row {
+      display: flex;
+      margin-bottom: 1.2rem;
+      align-items: flex-end;
+      gap: 0.6rem;
+      animation: fadeInUp 0.3s ease;
+    }
+    .message-row.user-row {
+      flex-direction: row-reverse;
+    }
+
+    .avatar {
+      width: 34px;
+      height: 34px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.9rem;
+      flex-shrink: 0;
+    }
+
+    .bot-avatar {
+      background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+      color: white;
+      font-weight: 700;
+      font-size: 0.7rem;
+    }
+
+    .user-avatar {
+      background: linear-gradient(135deg, #ef5350, #c62828);
+      color: white;
+      font-size: 1rem;
     }
 
     .message {
-      margin-bottom: 1rem;
-      max-width: 80%;
-      padding: 0.8rem 1rem;
+      max-width: 72%;
+      padding: 0.85rem 1.1rem;
       border-radius: 18px;
-      line-height: 1.4;
+      line-height: 1.55;
+      font-size: 0.92rem;
+      word-break: break-word;
     }
 
     .user-message {
-      background-color: var(--secondary-color);
+      background: linear-gradient(135deg, #c62828, #d32f2f);
       color: white;
-      margin-left: auto;
       border-bottom-right-radius: 4px;
+      box-shadow: 0 2px 8px rgba(198, 40, 40, 0.3);
     }
 
     .bot-message {
-      background-color: var(--light-color);
-      margin-right: auto;
+      background-color: #fff5f5;
+      border: 1px solid var(--border-color);
       border-bottom-left-radius: 4px;
+      color: #333;
     }
 
+    .bot-message a {
+      color: var(--secondary-color);
+      text-decoration: none;
+      font-weight: 600;
+    }
+    .bot-message a:hover {
+      text-decoration: underline;
+    }
+
+    /* ── SUGGESTIONS ── */
+    .quick-suggestions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      padding: 0 1.5rem 1rem;
+    }
+
+    .suggestion-btn {
+      background: white;
+      border: 1px solid var(--border-color);
+      border-radius: 20px;
+      padding: 0.4rem 0.9rem;
+      font-size: 0.8rem;
+      cursor: pointer;
+      color: var(--secondary-color);
+      font-family: 'Open Sans', sans-serif;
+      transition: all 0.2s;
+      white-space: nowrap;
+    }
+    .suggestion-btn:hover {
+      background: var(--light-color);
+      border-color: var(--secondary-color);
+      transform: translateY(-1px);
+    }
+
+    /* ── FORMULAIRE ── */
     .chat-form {
       display: flex;
-      padding: 1rem;
-      background-color: #f8f9fa;
-      border-top: 1px solid #e9ecef;
+      padding: 1rem 1.2rem;
+      background-color: #fef9f9;
+      border-top: 1px solid var(--border-color);
       align-items: center;
+      gap: 0.6rem;
     }
 
     .chat-input {
       flex-grow: 1;
-      padding: 0.8rem 1rem;
-      border: 1px solid #ddd;
+      padding: 0.75rem 1.1rem;
+      border: 2px solid var(--border-color);
       border-radius: 25px;
-      font-size: 1rem;
+      font-size: 0.92rem;
       outline: none;
+      font-family: 'Open Sans', sans-serif;
+      transition: border-color 0.2s, box-shadow 0.2s;
+      background: white;
+      color: #333;
+    }
+    .chat-input:focus {
+      border-color: var(--secondary-color);
+      box-shadow: 0 0 0 3px rgba(211, 47, 47, 0.1);
+    }
+    .chat-input::placeholder {
+      color: #cba0a0;
     }
 
-    .chat-input:focus {
+    .icon-button {
+      width: 42px;
+      height: 42px;
+      border: 2px solid var(--border-color);
+      border-radius: 50%;
+      background: white;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.1rem;
+      transition: all 0.2s;
+      flex-shrink: 0;
+    }
+    .icon-button:hover {
+      background: var(--light-color);
       border-color: var(--secondary-color);
     }
 
     .send-button {
-      background-color: var(--secondary-color);
+      background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
       color: white;
       border: none;
-      border-radius: 50px;
-      padding: 0.7rem 1.8rem;
-      margin-left: 0.5rem;
-      font-size: 1rem;
-      font-weight: 500;
+      border-radius: 25px;
+      padding: 0.75rem 1.6rem;
+      font-size: 0.92rem;
+      font-weight: 600;
       cursor: pointer;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-      transition: background-color 0.3s ease, transform 0.2s ease;
+      font-family: 'Open Sans', sans-serif;
+      box-shadow: 0 3px 10px rgba(183, 28, 28, 0.3);
+      transition: all 0.2s;
+      flex-shrink: 0;
     }
-
     .send-button:hover {
-      background-color: #2980b9;
       transform: translateY(-2px);
+      box-shadow: 0 5px 15px rgba(183, 28, 28, 0.4);
     }
+    .send-button:active { transform: translateY(0); }
 
-    .footer {
-      text-align: center;
-      padding: 1rem;
-      background-color: var(--primary-color);
-      color: white;
-      font-size: 0.9rem;
-    }
-
-    .typing-indicator {
-      display: inline-block;
-      padding: 0.8rem 1rem;
-      background-color: var(--light-color);
-      border-radius: 18px;
-      margin-bottom: 1rem;
-    }
-
-    .typing-dot {
-      display: inline-block;
-      width: 8px;
-      height: 8px;
-      border-radius: 50%;
-      background-color: #7f8c8d;
-      margin-right: 4px;
-      animation: typingAnimation 1.4s infinite both;
-    }
-
-    .typing-dot:nth-child(1) { animation-delay: 0s; }
-    .typing-dot:nth-child(2) { animation-delay: 0.2s; }
-    .typing-dot:nth-child(3) { animation-delay: 0.4s; margin-right: 0; }
-
+    /* ── INDICATEURS ── */
     #recording-indicator {
       display: none;
       align-items: center;
-      justify-content: center;
-      margin-left: 0.5rem;
+      gap: 3px;
     }
-
-    #recording-indicator.active {
-      display: flex;
-    }
-
+    #recording-indicator.active { display: flex; }
     #recording-indicator .dot {
-      width: 8px;
-      height: 8px;
-      margin: 0 2px;
+      width: 6px; height: 6px;
       border-radius: 50%;
       background-color: var(--accent-color);
       animation: blink 1.4s infinite ease-in-out;
     }
-   
-    .vote-buttons {
-      display: flex;
-      margin-top: 8px;
-      gap: 8px;
+
+    .typing-indicator {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      padding: 0.75rem 1rem;
+      background-color: #fff5f5;
+      border: 1px solid var(--border-color);
+      border-radius: 18px;
+      border-bottom-left-radius: 4px;
     }
 
+    .typing-dot {
+      display: inline-block;
+      width: 7px; height: 7px;
+      border-radius: 50%;
+      background-color: var(--secondary-color);
+      animation: typingAnimation 1.4s infinite both;
+    }
+    .typing-dot:nth-child(1) { animation-delay: 0s; }
+    .typing-dot:nth-child(2) { animation-delay: 0.2s; }
+    .typing-dot:nth-child(3) { animation-delay: 0.4s; }
+
+    /* ── VOTES ── */
+    .vote-buttons { display: flex; margin-top: 8px; gap: 8px; }
     .vote-button {
       background: none;
-      border: none;
+      border: 1px solid var(--border-color);
+      border-radius: 12px;
       cursor: pointer;
-      font-size: 14px;
+      font-size: 0.78rem;
+      padding: 0.2rem 0.5rem;
       display: flex;
       align-items: center;
       gap: 4px;
-      color: #7f8c8d;
+      color: #c09090;
+      transition: all 0.2s;
+      font-family: 'Open Sans', sans-serif;
     }
-
+    .vote-button:hover { background: var(--light-color); }
     .vote-button.liked {
       color: var(--success-color);
+      border-color: var(--success-color);
+      background: #e8f5e9;
     }
-
     .vote-button.disliked {
       color: var(--accent-color);
+      border-color: var(--accent-color);
+      background: #ffebee;
     }
-
-    .vote-count {
-      font-size: 12px;
-      margin-left: 4px;
-    }
-
-    .response-options-container {
-      display: flex;
-      flex-direction: column;
-      gap: 8px;
-      margin-top: 10px;
-    }
-
-    .response-option {
-      padding: 8px 12px;
-      border-radius: 8px;
-      background-color: #f0f4f8;
-      cursor: pointer;
-      transition: background-color 0.2s;
-    }
-
-    .response-option:hover {
-      background-color: #e1e8ed;
-    }
+    .vote-count { font-size: 0.75rem; }
 
     .error-message {
       color: var(--accent-color);
-      font-size: 0.9em;
-      margin-top: 5px;
+      font-size: 0.85em;
+      margin-top: 4px;
+      padding: 0 1rem;
     }
 
-    .no-history {
+    /* ── FOOTER ── */
+    .footer {
       text-align: center;
-      padding: 2rem;
-      color: #7f8c8d;
-      font-size: 0.9rem;
+      padding: 0.8rem 1rem;
+      background: linear-gradient(135deg, #b71c1c, #c62828);
+      color: rgba(255,255,255,0.85);
+      font-size: 0.8rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 1rem;
+      flex-shrink: 0;
     }
+    .footer a { color: #ffcdd2; text-decoration: none; }
+    .footer a:hover { text-decoration: underline; }
 
+    /* ── ANIMATIONS ── */
     @keyframes blink {
       0%, 80%, 100% { opacity: 0; }
       40% { opacity: 1; }
     }
-
     @keyframes typingAnimation {
       0%, 60%, 100% { transform: translateY(0); }
       30% { transform: translateY(-5px); }
     }
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(8px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
 
+    /* ── RESPONSIVE ── */
     @media (max-width: 768px) {
-      .main-container {
-        flex-direction: column;
-      }
-
+      .header { padding: 0.8rem 1rem; }
+      .header-badge { display: none; }
+      .main-container { flex-direction: column; height: auto; }
       .history-sidebar {
         width: 100%;
+        max-height: 160px;
         border-right: none;
-        border-bottom: 1px solid #e9ecef;
-        max-height: 200px;
+        border-bottom: 1px solid var(--border-color);
       }
-
-      .chat-container {
-        margin: 0;
-        border-radius: 0;
-        height: auto;
-        flex-grow: 1;
-      }
-
-      .message {
-        max-width: 90%;
-      }
+      .chat-wrapper { padding: 0.75rem; }
+      .message { max-width: 88%; }
+      .quick-suggestions { padding: 0 0.75rem 0.75rem; }
     }
   </style>
 </head>
 <body>
+
+  <!-- HEADER -->
   <div class="header">
-    <h1>Chatbot ISET</h1>
-    <p>Votre assistant virtuel pour toutes vos questions académiques</p>
+    <div class="header-brand">
+      <div class="header-logo">EPI</div>
+      <div class="header-text">
+        <h1>Assistant Virtuel EPI</h1>
+        <p>École Privée d'Ingénierie et de Technologies</p>
+      </div>
+    </div>
+    <div class="header-badge">
+      <div class="status-dot"></div>
+      En ligne
+    </div>
   </div>
 
+  <!-- MAIN -->
   <div class="main-container">
+
+    <!-- SIDEBAR HISTORIQUE -->
     <div class="history-sidebar" id="history-sidebar">
       <div class="history-header">
-        <div class="history-title">Historique des conversations</div>
+        <div class="history-title">Historique</div>
         <div class="history-actions">
-          <button class="history-button new-chat-button" id="new-chat-button">
-            <span>Nouveau</span>
-          </button>
-          <button class="history-button clear-history" id="clear-history">
-            <span>Effacer</span>
-          </button>
+          <button class="history-button new-chat-button" id="new-chat-button" title="Nouvelle conversation">+ Nouveau</button>
+          <button class="history-button clear-history" id="clear-history" title="Tout effacer">Tout effacer</button>
         </div>
       </div>
-      <div class="history-list" id="history-list"></div>
+      <div class="history-list" id="history-list">
+        <div class="no-history"><span>💬</span>Aucun historique</div>
+      </div>
     </div>
 
-    <div class="chat-container">
-      <div class="chat-history" id="chat-history">
-        <div class="message bot-message">
-          Bonjour ! Je suis le chatbot de l'ISET. Comment puis-je vous aider aujourd'hui ?
-        </div>
-      </div>
+    <!-- ZONE CHAT -->
+    <div class="chat-wrapper">
+      <div class="chat-container">
 
-      <form class="chat-form" id="chat-form">
-        <input type="text" class="chat-input" placeholder="Posez votre question..." required id="message-input">
-        <button type="button" id="mic-button" class="send-button">🎤</button>
-        <div id="recording-indicator">
-          <span class="dot"></span>
-          <span class="dot"></span>
-          <span class="dot"></span>
+        <div class="chat-header-bar">
+          🤖 &nbsp;Posez vos questions sur les formations, admissions, vie étudiante et plus encore…
         </div>
-        <button type="submit" class="send-button">Envoyer</button>
-      </form>
+
+        <div class="chat-history" id="chat-history"></div>
+
+        <!-- Suggestions rapides -->
+        <div class="quick-suggestions" id="quick-suggestions">
+          <button class="suggestion-btn" onclick="sendSuggestion('Quelles formations propose l\'EPI ?')">🎓 Formations</button>
+          <button class="suggestion-btn" onclick="sendSuggestion('Comment s\'inscrire à l\'EPI ?')">📋 Admission</button>
+          <button class="suggestion-btn" onclick="sendSuggestion('Quels sont les frais de scolarité ?')">💰 Frais</button>
+          <button class="suggestion-btn" onclick="sendSuggestion('Présente-moi l\'EPI')">🏫 L'EPI</button>
+          <button class="suggestion-btn" onclick="sendSuggestion('Quels sont les débouchés après l\'EPI ?')">💼 Débouchés</button>
+          <button class="suggestion-btn" onclick="sendSuggestion('Contact et localisation EPI')">📍 Contact</button>
+        </div>
+
+        <!-- Formulaire -->
+        <form class="chat-form" id="chat-form">
+          <button type="button" id="mic-button" class="icon-button" title="Reconnaissance vocale">🎤</button>
+          <div id="recording-indicator">
+            <span class="dot"></span><span class="dot"></span><span class="dot"></span>
+          </div>
+          <input type="text" class="chat-input" placeholder="Posez votre question sur l'EPI…" id="message-input" autocomplete="off">
+          <button type="submit" class="send-button">Envoyer ➤</button>
+        </form>
+
+      </div>
     </div>
   </div>
 
+  <!-- FOOTER -->
   <div class="footer">
-    © 2023 ISET Sfax - Tous droits réservés
+    <span>© 2026 EPI – École Privée d'Ingénierie et de Technologies</span>
+    <span>•</span>
+    <a href="https://episup.com/fr" target="_blank">episup.com</a>
   </div>
 
   <script>
-    const form = document.getElementById('chat-form');
-    const chatHistory = document.getElementById('chat-history');
-    const chatInput = document.getElementById('message-input');
-    const micButton = document.getElementById("mic-button");
-    const recordingIndicator = document.getElementById("recording-indicator");
-    const historyList = document.getElementById("history-list");
-    const clearHistoryBtn = document.getElementById("clear-history");
-    const newChatButton = document.getElementById("new-chat-button");
+    /* ──────────────────────────────────────────────────────────────────────────
+       ÉTAT
+    ────────────────────────────────────────────────────────────────────────── */
+    const form           = document.getElementById('chat-form');
+    const chatHistory    = document.getElementById('chat-history');
+    const chatInput      = document.getElementById('message-input');
+    const micButton      = document.getElementById('mic-button');
+    const recordingInd   = document.getElementById('recording-indicator');
+    const historyList    = document.getElementById('history-list');
+    const clearHistoryBtn= document.getElementById('clear-history');
+    const newChatButton  = document.getElementById('new-chat-button');
+    const quickSugg      = document.getElementById('quick-suggestions');
 
-    // Charger l'historique au démarrage
-    document.addEventListener('DOMContentLoaded', () => {
-      loadHistory();
-      chatInput.focus();
-    });
+    // currentConvId : id de la conversation en cours (null = nouvelle)
+    let currentConvId = null;
 
-    // Vérifie si la reconnaissance vocale est disponible
-    const isSpeechRecognitionSupported = 'SpeechRecognition' in window || 'webkitSpeechRecognition' in window;
-    
-    if (isSpeechRecognitionSupported) {
-      const recognition = new (window.SpeechRecognition || window.webkitSpeechRecognition)();
-      recognition.lang = "fr-FR";
-      recognition.interimResults = false;
+    /* ──────────────────────────────────────────────────────────────────────────
+       STORAGE  –  conversations = [ { id, title, messages: [{role,content}], timestamp } ]
+    ────────────────────────────────────────────────────────────────────────── */
+    function getConversations() {
+      return JSON.parse(localStorage.getItem('epiConversations')) || [];
+    }
+    function saveConversations(convs) {
+      localStorage.setItem('epiConversations', JSON.stringify(convs));
+    }
+    function getConvById(id) {
+      return getConversations().find(c => c.id === id) || null;
+    }
+    function generateId() {
+      return Date.now().toString(36) + Math.random().toString(36).slice(2, 6);
+    }
 
-      micButton.addEventListener("click", function() {
-        try {
-          recognition.start();
-          recordingIndicator.classList.add("active");
-          micButton.disabled = true;
-        } catch (error) {
-          console.error("Erreur de reconnaissance vocale:", error);
-          addMessage("La reconnaissance vocale n'a pas pu démarrer. Veuillez vérifier vos permissions microphone.", 'bot');
+    /** Ajoute un message à la conversation courante (crée la conv si besoin). */
+    function pushMessage(role, content) {
+      let convs = getConversations();
+      let conv = convs.find(c => c.id === currentConvId);
+      if (!conv) {
+        conv = {
+          id: generateId(),
+          title: '',
+          messages: [],
+          timestamp: new Date().toISOString()
+        };
+        currentConvId = conv.id;
+        convs.push(conv);
+      }
+      conv.messages.push({ role, content });
+      // Le titre = première question de l'utilisateur
+      if (!conv.title && role === 'user') {
+        conv.title = content.length > 60 ? content.slice(0, 57) + '…' : content;
+      }
+      conv.timestamp = new Date().toISOString();
+      saveConversations(convs);
+    }
+
+    function deleteConversation(id) {
+      let convs = getConversations().filter(c => c.id !== id);
+      saveConversations(convs);
+      if (currentConvId === id) {
+        currentConvId = null;
+        startNewConversation();
+      }
+      renderHistory();
+    }
+
+    function deleteAllConversations() {
+      localStorage.removeItem('epiConversations');
+      currentConvId = null;
+      startNewConversation();
+      renderHistory();
+    }
+
+    /* ──────────────────────────────────────────────────────────────────────────
+       RENDER HISTORY SIDEBAR
+    ────────────────────────────────────────────────────────────────────────── */
+    function renderHistory() {
+      const convs = getConversations();
+      historyList.innerHTML = '';
+
+      if (convs.length === 0) {
+        historyList.innerHTML = '<div class="no-history"><span>💬</span>Aucun historique</div>';
+        return;
+      }
+
+      // Plus récent en haut
+      [...convs].reverse().forEach(conv => {
+        const el = document.createElement('div');
+        el.className = 'history-item' + (conv.id === currentConvId ? ' active' : '');
+        el.dataset.id = conv.id;
+
+        const contentDiv = document.createElement('div');
+        contentDiv.className = 'history-item-content';
+
+        const q = document.createElement('div');
+        q.className = 'history-question';
+        q.textContent = conv.title || 'Conversation';
+
+        const d = document.createElement('div');
+        d.className = 'history-date';
+        d.textContent = conv.timestamp
+          ? new Date(conv.timestamp).toLocaleString('fr-FR')
+          : '';
+
+        contentDiv.appendChild(q);
+        contentDiv.appendChild(d);
+
+        const delBtn = document.createElement('button');
+        delBtn.className = 'history-delete';
+        delBtn.title = 'Supprimer cette conversation';
+        delBtn.textContent = '✕';
+        delBtn.addEventListener('click', (e) => {
+          e.stopPropagation();
+          deleteConversation(conv.id);
+        });
+
+        el.appendChild(contentDiv);
+        el.appendChild(delBtn);
+        historyList.appendChild(el);
+
+        // Clic sur l'item → restaurer la conversation
+        contentDiv.addEventListener('click', () => restoreConversation(conv.id));
+      });
+    }
+
+    /* ──────────────────────────────────────────────────────────────────────────
+       RESTORE CONVERSATION  –  affiche exactement les messages sauvegardés
+    ────────────────────────────────────────────────────────────────────────── */
+    function restoreConversation(id) {
+      const conv = getConvById(id);
+      if (!conv) return;
+
+      currentConvId = id;
+      chatHistory.innerHTML = '';
+      quickSugg.style.display = 'none';
+
+      conv.messages.forEach(msg => {
+        if (msg.role === 'user') {
+          appendUserBubble(msg.content);
+        } else {
+          appendBotBubble(msg.content);
         }
       });
 
-      recognition.onresult = function(event) {
-        const transcript = event.results[0][0].transcript;
-        chatInput.value = transcript;
-      };
+      scrollToBottom();
+      renderHistory();
+    }
 
-      recognition.onerror = function(event) {
-        console.error("Erreur de reconnaissance:", event.error);
-        addMessage(`Erreur de reconnaissance vocale: ${event.error}`, 'bot');
-      };
+    /* ──────────────────────────────────────────────────────────────────────────
+       FORMAT TEXT  –  transforme le texte brut en HTML mis en forme
+    ────────────────────────────────────────────────────────────────────────── */
+    function formatBotText(text) {
+      return text
+        .replace(/&/g, '&amp;')
+        .replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;')
+        .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
+        .replace(/\n/g, '<br>');
+    }
 
-      recognition.onend = function() {
-        recordingIndicator.classList.remove("active");
+    /* ──────────────────────────────────────────────────────────────────────────
+       APPEND BUBBLES  –  fonctions d'affichage (sans sauvegarde)
+    ────────────────────────────────────────────────────────────────────────── */
+    function appendUserBubble(text) {
+      const row = document.createElement('div');
+      row.classList.add('message-row', 'user-row');
+      const av = document.createElement('div');
+      av.classList.add('avatar', 'user-avatar');
+      av.textContent = '👤';
+      const msg = document.createElement('div');
+      msg.classList.add('message', 'user-message');
+      msg.textContent = text;
+      row.appendChild(av);
+      row.appendChild(msg);
+      chatHistory.appendChild(row);
+    }
+
+    function appendBotBubble(text) {
+      const row = document.createElement('div');
+      row.classList.add('message-row');
+      const av = document.createElement('div');
+      av.classList.add('avatar', 'bot-avatar');
+      av.textContent = 'EPI';
+      const msg = document.createElement('div');
+      msg.classList.add('message', 'bot-message');
+      msg.innerHTML = formatBotText(text);
+      row.appendChild(av);
+      row.appendChild(msg);
+      chatHistory.appendChild(row);
+    }
+
+    function appendBotBubbleHTML(html) {
+      const row = document.createElement('div');
+      row.classList.add('message-row');
+      const av = document.createElement('div');
+      av.classList.add('avatar', 'bot-avatar');
+      av.textContent = 'EPI';
+      const msg = document.createElement('div');
+      msg.classList.add('message', 'bot-message');
+      msg.innerHTML = html;
+      row.appendChild(av);
+      row.appendChild(msg);
+      chatHistory.appendChild(row);
+    }
+
+    /* ──────────────────────────────────────────────────────────────────────────
+       NEW CONVERSATION / WELCOME
+    ────────────────────────────────────────────────────────────────────────── */
+    const WELCOME_HTML =
+      "Bonjour et bienvenue ! 👋 Je suis l'assistant virtuel de l'<strong>EPI – École Privée d'Ingénierie et de Technologies</strong>.<br><br>" +
+      "Je peux vous renseigner sur les <strong>formations</strong>, l'<strong>admission</strong>, les <strong>frais de scolarité</strong>, la <strong>vie étudiante</strong>, les <strong>stages</strong> et bien d'autres sujets.<br><br>" +
+      "Comment puis-je vous aider ? 🎓";
+
+    function startNewConversation() {
+      currentConvId = null;
+      chatHistory.innerHTML = '';
+      quickSugg.style.display = 'flex';
+      appendBotBubbleHTML(WELCOME_HTML);
+      renderHistory();
+      chatInput.focus();
+    }
+
+    /* ──────────────────────────────────────────────────────────────────────────
+       INIT
+    ────────────────────────────────────────────────────────────────────────── */
+    document.addEventListener('DOMContentLoaded', () => {
+      // Migration : ancien format → nouveau (si besoin)
+      migrateOldHistory();
+      startNewConversation();
+      chatInput.focus();
+    });
+
+    function migrateOldHistory() {
+      const old = JSON.parse(localStorage.getItem('chatHistory'));
+      if (!old || !Array.isArray(old)) return;
+      const convs = getConversations();
+      old.forEach(item => {
+        const q = item.question || item.Question || '';
+        const r = item.response || item.Réponse || item.reponse || '';
+        if (!q) return;
+        convs.push({
+          id: generateId(),
+          title: q.length > 60 ? q.slice(0, 57) + '…' : q,
+          messages: [
+            { role: 'user',  content: q },
+            { role: 'bot',   content: r }
+          ],
+          timestamp: item.timestamp || new Date().toISOString()
+        });
+      });
+      saveConversations(convs);
+      localStorage.removeItem('chatHistory');
+    }
+
+    /* ──────────────────────────────────────────────────────────────────────────
+       VOICE
+    ────────────────────────────────────────────────────────────────────────── */
+    const hasSpeech = 'SpeechRecognition' in window || 'webkitSpeechRecognition' in window;
+    if (hasSpeech) {
+      const recognition = new (window.SpeechRecognition || window.webkitSpeechRecognition)();
+      recognition.lang = 'fr-FR';
+      recognition.interimResults = false;
+
+      micButton.addEventListener('click', () => {
+        try {
+          recognition.start();
+          recordingInd.classList.add('active');
+          micButton.disabled = true;
+          micButton.style.borderColor = 'var(--accent-color)';
+        } catch (e) { /* already started */ }
+      });
+      recognition.onresult = (e) => { chatInput.value = e.results[0][0].transcript; };
+      recognition.onerror  = (e) => { console.error(e.error); };
+      recognition.onend    = ()  => {
+        recordingInd.classList.remove('active');
         micButton.disabled = false;
+        micButton.style.borderColor = '';
       };
     } else {
       micButton.style.display = 'none';
-      console.warn("La reconnaissance vocale n'est pas supportée par ce navigateur");
     }
 
+    /* ──────────────────────────────────────────────────────────────────────────
+       SUGGESTION
+    ────────────────────────────────────────────────────────────────────────── */
+    function sendSuggestion(text) {
+      chatInput.value = text;
+      form.dispatchEvent(new Event('submit'));
+      quickSugg.style.display = 'none';
+    }
+
+    /* ──────────────────────────────────────────────────────────────────────────
+       SUBMIT
+    ────────────────────────────────────────────────────────────────────────── */
     form.addEventListener('submit', async (e) => {
       e.preventDefault();
       const message = chatInput.value.trim();
-      
-      if (!message) {
-        showError("Veuillez saisir un message");
-        return;
-      }
-      
-      addMessage(message, 'user');
+      if (!message) { showError('Veuillez saisir un message.'); return; }
+
+      quickSugg.style.display = 'none';
+
+      // Afficher + sauvegarder le message utilisateur
+      appendUserBubble(message);
+      pushMessage('user', message);
       chatInput.value = '';
       clearErrors();
       showTypingIndicator();
 
       try {
-        const response = await fetch('/chat', {
+        const res = await fetch('/chat', {
           method: 'POST',
-          headers: { 
-            'Content-Type': 'application/json',
-            'Accept': 'application/json'
-          },
+          headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({ message })
         });
+        if (!res.ok) throw new Error(`HTTP ${res.status}`);
 
-        if (!response.ok) {
-          const errorData = await response.json().catch(() => ({}));
-          throw new Error(errorData.error || `Erreur HTTP: ${response.status}`);
-        }
-
-        const data = await response.json();
+        const data = await res.json();
         removeTypingIndicator();
 
         if (data.reponse) {
-          const messageDiv = document.createElement('div');
-          messageDiv.classList.add('message', 'bot-message');
-          chatHistory.appendChild(messageDiv);
-
+          // Créer la bulle bot avec effet typewriter
+          const row = document.createElement('div');
+          row.classList.add('message-row');
+          const av = document.createElement('div');
+          av.classList.add('avatar', 'bot-avatar');
+          av.textContent = 'EPI';
+          const msgDiv = document.createElement('div');
+          msgDiv.classList.add('message', 'bot-message');
           const contentDiv = document.createElement('div');
-          messageDiv.appendChild(contentDiv);
+          msgDiv.appendChild(contentDiv);
+          row.appendChild(av);
+          row.appendChild(msgDiv);
+          chatHistory.appendChild(row);
 
           await typewriterEffect(contentDiv, data.reponse);
-          
-          // Sauvegarde dans localStorage
-          saveToLocalStorage(message, data.reponse);
-          loadHistory(); // Rafraîchir l'historique
+          addVoteButtons(contentDiv, data.reponse);
 
-          applyMessageStyles(contentDiv);
+          // Sauvegarder la réponse bot
+          pushMessage('bot', data.reponse);
+          renderHistory();
           scrollToBottom();
         } else {
-          addMessage("Je n'ai pas pu comprendre votre demande. Pourriez-vous reformuler ?", 'bot');
+          const fallback = "Je n'ai pas pu comprendre votre demande. Pourriez-vous reformuler ?";
+          appendBotBubble(fallback);
+          pushMessage('bot', fallback);
+          renderHistory();
         }
-      } catch (error) {
+      } catch (err) {
         removeTypingIndicator();
-        console.error('Erreur:', error);
-        addMessage("Une erreur technique est survenue. Notre équipe a été notifiée. Vous pouvez essayer de reformuler votre question ou consulter <a href='https://isetsf.rnu.tn' target='_blank'>le site de l'ISET</a> directement.", 'bot');
+        console.error(err);
+        const errMsg = "Une erreur technique est survenue. Veuillez réessayer ou consulter episup.com/fr.";
+        appendBotBubble(errMsg);
+        pushMessage('bot', errMsg);
+        renderHistory();
       }
     });
 
-    // Effacer l'historique
-    clearHistoryBtn.addEventListener('click', (e) => {
-      e.preventDefault();
-      if (confirm("Êtes-vous sûr de vouloir effacer tout l'historique des conversations ?")) {
-        localStorage.removeItem('chatHistory');
-        historyList.innerHTML = '<div class="no-history">Aucun historique disponible</div>';
+    /* ──────────────────────────────────────────────────────────────────────────
+       BUTTONS
+    ────────────────────────────────────────────────────────────────────────── */
+    clearHistoryBtn.addEventListener('click', () => {
+      if (confirm("Supprimer tout l'historique des conversations ?")) {
+        deleteAllConversations();
       }
     });
 
-    // Nouvelle conversation
-    newChatButton.addEventListener('click', (e) => {
-      e.preventDefault();
-      startNewConversation();
-    });
+    newChatButton.addEventListener('click', () => startNewConversation());
 
-    // Charger l'historique depuis localStorage
-    function loadHistory() {
-      const history = JSON.parse(localStorage.getItem('chatHistory')) || [];
-      historyList.innerHTML = '';
-
-      if (history.length === 0) {
-        historyList.innerHTML = '<div class="no-history">Aucun historique disponible</div>';
-        return;
-      }
-
-      // Afficher les éléments d'historique du plus récent au plus ancien
-      history.reverse().forEach((item, index) => {
-        const historyItem = document.createElement('div');
-        historyItem.className = 'history-item';
-        historyItem.dataset.index = history.length - 1 - index; // Inverser l'index pour garder l'ordre original
-        
-        const questionDiv = document.createElement('div');
-        questionDiv.className = 'history-question';
-        questionDiv.textContent = item.question || item.Question || 'Question sans texte';
-        
-        const dateDiv = document.createElement('div');
-        dateDiv.className = 'history-date';
-        
-        if (item.timestamp) {
-          const date = new Date(item.timestamp);
-          dateDiv.textContent = date.toLocaleString('fr-FR');
-        } else {
-          dateDiv.textContent = 'Date inconnue';
-        }
-        
-        historyItem.appendChild(questionDiv);
-        historyItem.appendChild(dateDiv);
-        historyList.appendChild(historyItem);
-
-        // Ajouter un gestionnaire d'événements pour charger la conversation
-        historyItem.addEventListener('click', () => {
-          loadConversation(history.length - 1 - index);
-        });
-      });
-    }
-
-    // Charger une conversation spécifique depuis l'historique
-    function loadConversation(index) {
-      const history = JSON.parse(localStorage.getItem('chatHistory')) || [];
-      if (index >= 0 && index < history.length) {
-        const conversation = history[index];
-        
-        // Vider le chat actuel
-        chatHistory.innerHTML = '';
-        
-        // Ajouter la question de l'utilisateur
-        addMessage(conversation.question || conversation.Question, 'user');
-        
-        // Ajouter la réponse du bot
-        const messageDiv = document.createElement('div');
-        messageDiv.classList.add('message', 'bot-message');
-        messageDiv.innerHTML = conversation.response || conversation.Réponse || conversation.reponse;
-        chatHistory.appendChild(messageDiv);
-        
-        // Appliquer les styles aux messages
-        applyMessageStyles(messageDiv);
-        scrollToBottom();
-        
-        // Mettre en surbrillance l'élément sélectionné
-        document.querySelectorAll('.history-item').forEach(item => {
-          item.classList.remove('active');
-        });
-        document.querySelector(`.history-item[data-index="${index}"]`).classList.add('active');
-      }
-    }
-
-    // Commencer une nouvelle conversation
-    function startNewConversation() {
-      // Vider le chat actuel
-      chatHistory.innerHTML = '';
-      
-      // Ajouter le message de bienvenue initial
-      const welcomeMessage = document.createElement('div');
-      welcomeMessage.classList.add('message', 'bot-message');
-      welcomeMessage.textContent = "Bonjour ! Je suis le chatbot de l'ISET. Comment puis-je vous aider aujourd'hui ?";
-      chatHistory.appendChild(welcomeMessage);
-      
-      // Désactiver la surbrillance dans l'historique
-      document.querySelectorAll('.history-item').forEach(item => {
-        item.classList.remove('active');
-      });
-      
-      // Focus sur l'input
-      chatInput.focus();
-    }
-
-    function showError(message) {
-      const errorDiv = document.createElement('div');
-      errorDiv.className = 'error-message';
-      errorDiv.textContent = message;
-      form.appendChild(errorDiv);
-    }
-
-    function clearErrors() {
-      const errors = form.querySelectorAll('.error-message');
-      errors.forEach(error => error.remove());
-    }
-
+    /* ──────────────────────────────────────────────────────────────────────────
+       TYPEWRITER
+    ────────────────────────────────────────────────────────────────────────── */
     async function typewriterEffect(element, text) {
-      return new Promise((resolve) => {
+      return new Promise(resolve => {
+        const html = formatBotText(text);
         let i = 0;
-        const speed = 20;
-        function typeWriter() {
-          if (i < text.length) {
-            element.innerHTML = text.substring(0, i + 1);
-            i++;
-            setTimeout(typeWriter, speed);
+        const speed = 12;
+        (function tick() {
+          if (i < html.length) {
+            element.innerHTML = html.substring(0, ++i);
+            setTimeout(tick, speed);
           } else {
+            element.innerHTML = html;
             resolve();
           }
-        }
-        typeWriter();
+        })();
       });
     }
 
-    async function applyMessageStyles(contentDiv) {
-      // Style pour les liens et petits textes
-      const links = contentDiv.querySelectorAll('a');
-      links.forEach(link => {
-        link.style.color = '#3498db';
-        link.style.textDecoration = 'none';
-        link.style.fontWeight = '500';
-        link.addEventListener('mouseover', () => {
-          link.style.textDecoration = 'underline';
-        });
-        link.addEventListener('mouseout', () => {
-          link.style.textDecoration = 'none';
-        });
-      });
+    /* ──────────────────────────────────────────────────────────────────────────
+       VOTES
+    ────────────────────────────────────────────────────────────────────────── */
+    function addVoteButtons(contentDiv, responseText) {
+      const hash = hashString(responseText);
+      const container = document.createElement('div');
+      container.className = 'vote-buttons';
 
-      const smallTexts = contentDiv.querySelectorAll('small');
-      smallTexts.forEach(small => {
-        small.style.display = 'block';
-        small.style.marginTop = '8px';
-        small.style.fontSize = '0.8em';
-        small.style.color = '#7f8c8d';
-      });
+      fetch(`/get_votes?hash=${hash}`)
+        .then(r => r.json())
+        .then(data => {
+          container.appendChild(makeVoteBtn('👍', data.likes  || 0, 'like',    hash, contentDiv));
+          container.appendChild(makeVoteBtn('👎', data.dislikes||0, 'dislike', hash, contentDiv));
+          contentDiv.appendChild(container);
+        })
+        .catch(() => {});
+    }
 
-      // Ajouter des boutons de vote pour chaque option dans les réponses multiples
-      if (contentDiv.innerHTML.includes('response-option')) {
-        const optionsContainer = document.createElement('div');
-        optionsContainer.className = 'response-options-container';
-        
-        // Récupérer toutes les options
-        const options = Array.from(contentDiv.querySelectorAll('.response-option'));
-        
-        // Trier les options par nombre de likes (descendant)
-        const sortedOptions = await sortOptionsByLikes(options);
-        
-        // Ajouter les options triées au conteneur
-        sortedOptions.forEach(option => {
-          optionsContainer.appendChild(option);
-        });
-        
-        // Remplacer le contenu original par les options triées
-        contentDiv.innerHTML = '';
-        contentDiv.appendChild(optionsContainer);
-        
-        // Ajouter les boutons de vote à chaque option
-        sortedOptions.forEach(option => {
-          const optionText = option.textContent.trim();
-          const responseHash = hashString(optionText);
-          
-          const voteContainer = document.createElement('div');
-          voteContainer.className = 'vote-buttons';
-          
-          fetch(`/get_votes?hash=${responseHash}`)
-            .then(response => response.json())
-            .then(data => {
-              const likeButton = document.createElement('button');
-              likeButton.className = 'vote-button';
-              likeButton.innerHTML = `👍 <span class="vote-count">${data.likes || 0}</span>`;
-              likeButton.onclick = (e) => {
-                e.stopPropagation();
-                handleVote(option, 'like', responseHash);
-              };
-              
-              const dislikeButton = document.createElement('button');
-              dislikeButton.className = 'vote-button';
-              dislikeButton.innerHTML = `👎 <span class="vote-count">${data.dislikes || 0}</span>`;
-              dislikeButton.onclick = (e) => {
-                e.stopPropagation();
-                handleVote(option, 'dislike', responseHash);
-              };
-              
-              voteContainer.appendChild(likeButton);
-              voteContainer.appendChild(dislikeButton);
-              option.appendChild(voteContainer);
-            });
-        });
-      } else if (contentDiv.closest('.bot-message')) {
-        // Gestion des votes pour les réponses simples
-        const responseHash = hashString(contentDiv.textContent);
-        const voteContainer = document.createElement('div');
-        voteContainer.className = 'vote-buttons';
-        
-        fetch(`/get_votes?hash=${responseHash}`)
-          .then(response => response.json())
-          .then(data => {
-            const likeButton = document.createElement('button');
-            likeButton.className = 'vote-button';
-            likeButton.innerHTML = `👍 <span class="vote-count">${data.likes || 0}</span>`;
-            likeButton.onclick = () => handleVote(contentDiv, 'like', responseHash);
-            
-            const dislikeButton = document.createElement('button');
-            dislikeButton.className = 'vote-button';
-            dislikeButton.innerHTML = `👎 <span class="vote-count">${data.dislikes || 0}</span>`;
-            dislikeButton.onclick = () => handleVote(contentDiv, 'dislike', responseHash);
-            
-            voteContainer.appendChild(likeButton);
-            voteContainer.appendChild(dislikeButton);
-            contentDiv.appendChild(voteContainer);
-          });
-      }
-    }
-    
-    async function sortOptionsByLikes(options) {
-      // Créer un tableau de promesses pour récupérer les votes de chaque option
-      const votePromises = options.map(option => {
-        const optionText = option.textContent.trim();
-        const responseHash = hashString(optionText);
-        return fetch(`/get_votes?hash=${responseHash}`)
-          .then(response => response.json())
-          .then(data => {
-            return {
-              element: option,
-              likes: data.likes || 0,
-              dislikes: data.dislikes || 0
-            };
-          });
-      });
-      
-      // Attendre que toutes les requêtes soient terminées
-      const optionsWithVotes = await Promise.all(votePromises);
-      
-      // Trier les options par nombre de likes (descendant)
-      optionsWithVotes.sort((a, b) => b.likes - a.likes);
-      
-      // Retourner seulement les éléments triés
-      return optionsWithVotes.map(item => item.element);
-    }
-    
-    async function handleVote(element, voteType, responseHash) {
-      const buttonsContainer = element.parentElement;
-      const buttons = buttonsContainer.querySelectorAll('.vote-button');
-      
-      // Désactiver tous les boutons pour cette option
-      buttons.forEach(btn => {
+    function makeVoteBtn(emoji, count, type, hash, contentDiv) {
+      const btn = document.createElement('button');
+      btn.className = 'vote-button';
+      btn.innerHTML = `${emoji} <span class="vote-count">${count}</span>`;
+      btn.onclick = async () => {
+        if (btn.disabled) return;
         btn.disabled = true;
-        if (btn !== element) {
+        btn.classList.add(type === 'like' ? 'liked' : 'disliked');
+        try {
+          await fetch('/vote', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ hash: hash.toString(), type })
+          });
+          const span = btn.querySelector('.vote-count');
+          span.textContent = parseInt(span.textContent || '0') + 1;
+        } catch {
+          btn.disabled = false;
           btn.classList.remove('liked', 'disliked');
         }
-      });
-      
-      // Mettre en évidence le bouton sélectionné
-      element.classList.add(voteType === 'like' ? 'liked' : 'disliked');
-      
-      // Préparer les données du site
-      const question = document.querySelector('.user-message:last-child')?.textContent || 'Question inconnue';
-      const response = element.closest('.response-option') ? 
-        element.closest('.response-option').textContent.replace(/👍 \d+|👎 \d+/g, '').trim() : 
-        element.closest('.message').textContent.replace(/👍 \d+|👎 \d+/g, '').trim();
-      
-      const siteData = {
-        Question: question,
-        Réponse: response,
-        URL: window.location.href
       };
-      
-      try {
-        const response = await fetch('/vote', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({
-            hash: responseHash.toString(),
-            type: voteType,
-            site_data: siteData
-          })
-        });
-        
-        if (!response.ok) throw new Error('Échec du vote');
-        
-        // Mettre à jour le compteur localement
-        const countSpan = element.querySelector('.vote-count');
-        const currentCount = parseInt(countSpan.textContent) || 0;
-        countSpan.textContent = currentCount + 1;
-        
-        // Si c'est une réponse multiple, re-trier les options
-        if (element.closest('.response-options-container')) {
-          const optionsContainer = element.closest('.response-options-container');
-          const options = Array.from(optionsContainer.querySelectorAll('.response-option'));
-          const sortedOptions = await sortOptionsByLikes(options);
-          
-          // Vider et remplir à nouveau le conteneur avec les options triées
-          optionsContainer.innerHTML = '';
-          sortedOptions.forEach(option => {
-            optionsContainer.appendChild(option);
-          });
-        }
-      } catch (error) {
-        console.error('Erreur lors du vote:', error);
-        // Annuler les changements UI si le vote échoue
-        element.classList.remove('liked', 'disliked');
-        buttons.forEach(btn => btn.disabled = false);
-      }
-    }
-    
-    // Fonction utilitaire pour hacher une chaîne (similaire à ce que fait le serveur)
-    function hashString(str) {
-      let hash = 0;
-      for (let i = 0; i < str.length; i++) {
-        const char = str.charCodeAt(i);
-        hash = ((hash << 5) - hash) + char;
-        hash = hash & hash; // Convertir en entier 32 bits
-      }
-      return hash;
-    }
-    
-    function addMessage(text, sender) {
-      const messageDiv = document.createElement('div');
-      messageDiv.classList.add('message', `${sender}-message`);
-      
-      // Si c'est du texte simple
-      if (typeof text === 'string') {
-        messageDiv.textContent = text;
-      } else {
-        messageDiv.appendChild(text);
-      }
-      
-      chatHistory.appendChild(messageDiv);
-      scrollToBottom();
+      return btn;
     }
 
+    function hashString(str) {
+      let h = 0;
+      for (let i = 0; i < str.length; i++) {
+        h = ((h << 5) - h) + str.charCodeAt(i);
+        h = h & h;
+      }
+      return h;
+    }
+
+    /* ──────────────────────────────────────────────────────────────────────────
+       UTILS
+    ────────────────────────────────────────────────────────────────────────── */
     function showTypingIndicator() {
-      const typingDiv = document.createElement('div');
-      typingDiv.classList.add('typing-indicator');
-      typingDiv.id = 'typing-indicator';
-      typingDiv.innerHTML = `
-        <span class="typing-dot"></span>
-        <span class="typing-dot"></span>
-        <span class="typing-dot"></span>
-      `;
-      chatHistory.appendChild(typingDiv);
+      const w = document.createElement('div');
+      w.id = 'typing-wrapper';
+      w.style.cssText = 'display:flex;align-items:flex-end;gap:0.6rem;margin-bottom:1.2rem';
+      const av = document.createElement('div');
+      av.classList.add('avatar', 'bot-avatar');
+      av.textContent = 'EPI';
+      const td = document.createElement('div');
+      td.classList.add('typing-indicator');
+      td.innerHTML = '<span class="typing-dot"></span><span class="typing-dot"></span><span class="typing-dot"></span>';
+      w.appendChild(av);
+      w.appendChild(td);
+      chatHistory.appendChild(w);
       scrollToBottom();
     }
 
     function removeTypingIndicator() {
-      const typingIndicator = document.getElementById('typing-indicator');
-      if (typingIndicator) {
-        typingIndicator.remove();
-      }
+      const w = document.getElementById('typing-wrapper');
+      if (w) w.remove();
     }
 
     function scrollToBottom() {
       chatHistory.scrollTop = chatHistory.scrollHeight;
     }
 
-    function saveToLocalStorage(question, response) {
-      const history = JSON.parse(localStorage.getItem('chatHistory')) || [];
-      history.push({
-        question: question,
-        response: response,
-        timestamp: new Date().toISOString()
-      });
-      localStorage.setItem('chatHistory', JSON.stringify(history));
+    function showError(msg) {
+      clearErrors();
+      const d = document.createElement('div');
+      d.className = 'error-message';
+      d.textContent = msg;
+      form.parentElement.insertBefore(d, form.nextSibling);
+    }
+
+    function clearErrors() {
+      document.querySelectorAll('.error-message').forEach(e => e.remove());
     }
 
     chatInput.addEventListener('keypress', (e) => {
