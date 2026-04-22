@@ -511,7 +511,7 @@
         "combien de places"
       ],
       "responses": [
-        "**Effectifs et capacité d'accueil de l'EPI**\n\nL'EPI maintient des effectifs limités pour assurer une formation de qualité :\n\n• Classes à taille humaine (20 à 30 étudiants en TD/TP)\n• Encadrement personnalisé\n• Suivi pédagogique individualisé\n• Ratio enseignant/étudiant favorable\n\nCette approche permet à chaque étudiant de bénéficier d'une attention particulière.\n\nPour les chiffres exacts : https://episup.com/fr"
+        "**Effectifs et capacité d'accueil de l'EPI**\n\nL'EPI accueille environ **1 500 étudiants** tout en maintenant des effectifs limités par classe :\n\n• **Classes à taille humaine** : 20 à 30 étudiants en TD/TP\n• **Encadrement personnalisé** avec un ratio enseignant/étudiant favorable\n• **Suivi pédagogique individualisé** pour chaque étudiant\n• **Environ 80 enseignants** (permanents, vacataires, intervenants)\n\nCette approche permet à chaque étudiant de bénéficier d'une attention particulière.\n\nPour plus d'informations : https://episup.com/fr"
       ]
     },
     {
@@ -523,7 +523,7 @@
         "docteur", "professeur universitaire"
       ],
       "responses": [
-        "**Corps enseignant de l'EPI**\n\nL'EPI dispose d'un corps enseignant de haut niveau :\n\n• Docteurs et Professeurs d'université expérimentés\n• Ingénieurs et praticiens du monde professionnel\n• Experts nationaux et internationaux\n• Intervenants professionnels issus de grandes entreprises\n\nCette combinaison d'académiciens et de professionnels garantit une formation à la fois rigoureuse sur le plan théorique et adaptée aux réalités du marché du travail.\n\nPour plus d'informations : https://episup.com/fr"
+        "**Corps enseignant de l'EPI**\n\nL'EPI dispose d'une équipe pédagogique d'environ **80 enseignants** de haut niveau :\n\n• **Enseignants permanents** : docteurs et professeurs d'université expérimentés\n• **Enseignants vacataires** : ingénieurs et praticiens du monde professionnel\n• **Intervenants spécialisés** : experts nationaux et internationaux\n\nCette combinaison d'académiciens et de professionnels garantit une formation à la fois rigoureuse et adaptée aux réalités du marché du travail.\n\n**Ratio :** Classes de 20 à 30 étudiants en TD/TP pour un suivi personnalisé.\n\nPour plus d'informations : https://episup.com/fr"
       ]
     },
     {
@@ -778,6 +778,104 @@
       ],
       "responses": [
         "**Licence Appliquée vs Cycle Ingénieur à l'EPI**\n\n**Licence Appliquée (3 ans - Bac+3) :**\n• Formation professionnalisante\n• 6 semestres avec stages\n• Intégration rapide sur le marché du travail\n• Possibilité de poursuivre en cycle ingénieur ou master\n\n**Cycle Ingénieur (5 ans - Bac+5) :**\n• 2 ans préparatoires + 3 ans de spécialité\n• Formation approfondie et polyvalente\n• Titre d'Ingénieur reconnu\n• Responsabilités supérieures en entreprise\n• Salaire d'entrée généralement plus élevé\n\n**Comment choisir ?**\n• Optez pour la **licence** si vous voulez une intégration professionnelle rapide\n• Optez pour le **cycle ingénieur** si vous visez des postes à responsabilité et un diplôme Bac+5\n\nDans les deux cas, l'EPI assure une formation de qualité !"
+      ]
+    },
+    {
+      "tag": "directeur",
+      "patterns": [
+        "qui est le directeur", "directeur de l'epi", "directeur epi",
+        "qui dirige epi", "le directeur", "directeur général",
+        "président de epi", "fondateur de epi", "qui a fondé epi",
+        "fondateur epi", "qui a créé epi", "créateur de epi",
+        "direction epi", "qui est le responsable", "directrice",
+        "qui est à la tête de epi", "responsable de l'école",
+        "doyen", "doyen de epi", "qui gère epi"
+      ],
+      "responses": [
+        "**Direction de l'EPI**\n\nL'EPI – École Privée d'Ingénierie et de Technologies est dirigée par **M. Mahdi Mejri**, Directeur de l'établissement.\n\nSous sa direction, l'EPI s'est développée pour devenir un établissement de référence dans la formation d'ingénieurs et de techniciens en Tunisie.\n\nPour contacter la direction :\n• Email : contact@episup.com\n• Site : https://episup.com/fr"
+      ]
+    },
+    {
+      "tag": "nombre_professeurs",
+      "patterns": [
+        "combien de professeurs", "nombre de professeurs", "nombre d'enseignants",
+        "combien d'enseignants", "combien de profs", "effectif enseignant",
+        "taille du corps enseignant", "combien de formateurs",
+        "nombre de docteurs", "combien de docteurs enseignent",
+        "ratio enseignant étudiant", "ratio prof étudiant",
+        "il y a combien de professeurs", "les profs sont combien",
+        "nombre de profs", "nombre profs", "professeurs epi", "profs epi"
+      ],
+      "responses": [
+        "**Corps enseignant de l'EPI**\n\nL'EPI dispose d'une équipe pédagogique d'environ **80 enseignants**, composée de :\n\n• **Enseignants permanents** : docteurs et professeurs universitaires à temps plein\n• **Enseignants vacataires** : professionnels et experts du monde de l'entreprise\n• **Intervenants spécialisés** : experts nationaux et internationaux pour des modules spécifiques\n\n**Ratio enseignant/étudiant :**\nL'EPI maintient un ratio favorable avec des classes de 20 à 30 étudiants en TD/TP, ce qui permet un encadrement personnalisé.\n\nPour plus de détails : https://episup.com/fr"
+      ]
+    },
+    {
+      "tag": "nombre_etudiants",
+      "patterns": [
+        "combien d'étudiants", "nombre d'étudiants", "effectif étudiants",
+        "combien d'élèves", "il y a combien d'étudiants",
+        "combien d'étudiants inscrits", "taille de l'école",
+        "combien de personnes étudient", "nombre total d'étudiants",
+        "les étudiants sont combien"
+      ],
+      "responses": [
+        "**Effectif étudiant de l'EPI**\n\nL'EPI accueille environ **1 500 étudiants** répartis dans les différentes filières :\n\n• Génie Informatique et Systèmes d'Information\n• Génie Civil et BTP\n• Génie Électrique et Systèmes Embarqués\n• Génie Industriel et Management\n• Technologies de l'Informatique\n• Réseaux et Télécommunications\n\nL'EPI privilégie des **classes à taille humaine** (20 à 30 étudiants en TD/TP) pour garantir un suivi pédagogique de qualité.\n\nPour plus d'informations : https://episup.com/fr"
+      ]
+    },
+    {
+      "tag": "adresse_exacte",
+      "patterns": [
+        "adresse exacte", "adresse de l'epi", "où se situe epi",
+        "adresse précise", "localisation exacte", "l'adresse",
+        "c'est où epi", "epi se trouve où", "où est epi exactement",
+        "dans quelle ville", "quelle ville", "epi souse",
+        "epi sousse", "epi tunis", "emplacement epi",
+        "où se trouve l'école", "epi est situé où"
+      ],
+      "responses": [
+        "**Adresse de l'EPI**\n\nL'EPI – École Privée d'Ingénierie et de Technologies est située à **Souse**, Tunisie.\n\n**Adresse :**\nSahloul, Tunisie\n\n**Comment s'y rendre :**\n• Accessible par les transports en commun (lignes de bus)\n• Stationnement disponible aux environs du campus\n• Taxi / VTC : Bolt, InDriver, Yassir\n\n**Contact :**\n• Site : https://episup.com/fr\n• Email : contact@episup.com\n\nConsultez le site officiel pour l'itinéraire détaillé et la carte d'accès."
+      ]
+    },
+    {
+      "tag": "date_creation",
+      "patterns": [
+        "quand a été créée epi", "date de création", "année de fondation",
+        "quand epi a été fondée", "depuis quand existe epi",
+        "epi existe depuis quand", "historique de epi",
+        "quand l'école a ouvert", "en quelle année",
+        "depuis combien de temps existe epi", "âge de epi",
+        "création de l'école", "fondation de epi"
+      ],
+      "responses": [
+        "**Historique de l'EPI**\n\nL'EPI – École Privée d'Ingénierie et de Technologies a été fondée en **2000** à Souse, Tunisie.\n\nDepuis plus de **25 ans**, l'EPI forme des ingénieurs et des techniciens compétents dans les domaines de l'informatique, du génie civil, du génie électrique et du génie industriel.\n\n**Dates clés :**\n• **2000** : Création de l'EPI à Souse\n• Agrément du Ministère de l'Enseignement Supérieur\n• Développement progressif des filières et des partenariats\n• Aujourd'hui : un établissement reconnu avec plus de 1 500 étudiants\n\nPlus d'infos : https://episup.com/fr"
+      ]
+    },
+    {
+      "tag": "taux_reussite",
+      "patterns": [
+        "taux de réussite", "taux de diplomation", "combien réussissent",
+        "pourcentage de réussite", "taux d'échec", "est-ce difficile",
+        "est-ce dur", "difficulté des études", "niveau de difficulté",
+        "beaucoup d'étudiants échouent", "taux d'abandon",
+        "les études sont dures", "c'est dur à epi"
+      ],
+      "responses": [
+        "**Taux de réussite à l'EPI**\n\nL'EPI affiche un bon taux de réussite grâce à son accompagnement pédagogique :\n\n• **Taux de diplomation** élevé dans toutes les filières\n• **Session de rattrapage** pour les étudiants en difficulté\n• **Encadrement personnalisé** avec des classes à taille humaine\n• **Tutorat et soutien** par les enseignants\n\n**Ce qui aide les étudiants à réussir :**\n• Contrôle continu régulier (pas de surprise à l'examen)\n• Travaux pratiques et projets concrets\n• Suivi de l'assiduité et alertes précoces\n• Disponibilité des enseignants pour les questions\n\nL'EPI met tout en œuvre pour accompagner chaque étudiant vers la réussite !"
+      ]
+    },
+    {
+      "tag": "cout_exact",
+      "patterns": [
+        "prix exact", "montant exact des frais", "combien exactement",
+        "tarif exact", "coût précis", "combien par année",
+        "frais par an", "montant annuel", "quel est le montant",
+        "combien coûte une année", "prix d'une année",
+        "dites moi le prix", "je veux le prix exact",
+        "donnez moi le tarif", "c'est combien par an exactement"
+      ],
+      "responses": [
+        "**Frais de scolarité à l'EPI – Tarifs**\n\nLes frais de scolarité à l'EPI varient selon la filière et le cycle :\n\n**Cycle Ingénieur (5 ans) :**\n• Environ **4 500 à 5 500 DT** par an (selon la spécialité)\n\n**Licence Appliquée (3 ans) :**\n• Environ **3 500 à 4 500 DT** par an (selon la spécialité)\n\n**Frais d'inscription :**\n• Frais d'inscription annuels inclus\n\n**Facilités de paiement :**\n• Paiement en 3, 4 ou 6 tranches\n• Plans personnalisés possibles\n• Bourses d'excellence disponibles\n\n**Important :** Ces tarifs sont indicatifs. Pour les montants exacts et actualisés, contactez directement l'administration :\n• Email : contact@episup.com\n• Tél : consultez https://episup.com/fr"
       ]
     }
   ]

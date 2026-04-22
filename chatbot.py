@@ -23,10 +23,13 @@ from collections import Counter
 
 # ── Chargement des données ────────────────────────────────────────────────────
 
-with open("data.json", encoding="utf-8") as f:
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+DATA_DIR = os.path.join(BASE_DIR, "data")
+
+with open(os.path.join(DATA_DIR, "data.json"), encoding="utf-8") as f:
     data = json.load(f)
 
-CSV_FILE = "epi_site_data.csv"
+CSV_FILE = os.path.join(DATA_DIR, "epi_site_data.csv")
 csv_knowledge = []
 if os.path.exists(CSV_FILE):
     with open(CSV_FILE, encoding="utf-8") as f:
@@ -105,6 +108,22 @@ TAG_SUGGESTIONS = {
     "certifications": ["Formations ?", "Débouchés ?", "Partenariats ?"],
     "reconnaissance": ["Formations ?", "Débouchés ?", "Étudiants internationaux ?"],
     "orientation": ["Génie Informatique ?", "Génie Civil ?", "Génie Électrique ?"],
+    "directeur": ["Présentation EPI ?", "Contact ?", "Historique de l'EPI ?"],
+    "nombre_professeurs": ["Formations ?", "Laboratoires ?", "Vie étudiante ?"],
+    "nombre_etudiants": ["Formations ?", "Clubs étudiants ?", "Capacité d'accueil ?"],
+    "adresse_exacte": ["Transport ?", "Contact ?", "Portes ouvertes ?"],
+    "date_creation": ["Présentation EPI ?", "Directeur ?", "Reconnaissance ?"],
+    "taux_reussite": ["Formations ?", "Débouchés ?", "Vie étudiante ?"],
+    "cout_exact": ["Bourses ?", "Paiement en tranches ?", "Comment s'inscrire ?"],
+    "inscription_en_ligne": ["Documents requis ?", "Frais ?", "Contact ?"],
+    "emploi_du_temps": ["Résultats ?", "Règlement ?", "Contact ?"],
+    "alternance": ["Stages ?", "Débouchés ?", "Formations ?"],
+    "concours": ["Vie étudiante ?", "Clubs ?", "Formations ?"],
+    "sante": ["Vie étudiante ?", "Contact ?", "Sports ?"],
+    "projets_etudiants": ["Formations ?", "Stages ?", "PFE ?"],
+    "reseau_alumni": ["Débouchés ?", "Partenariats ?", "Stages ?"],
+    "horaires_administration": ["Contact ?", "Adresse ?", "Inscription ?"],
+    "difference_licence_ingenieur": ["Formations ?", "Durée des études ?", "Frais ?"],
 }
 
 DEFAULT_SUGGESTIONS = ["Formations EPI", "Comment s'inscrire ?", "Frais de scolarité ?"]

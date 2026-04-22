@@ -8,7 +8,8 @@ from chatbot import get_response
 app = Flask(__name__)
 app.secret_key = secrets.token_hex(32)
 
-VOTES_FILE = "votes.csv"
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+VOTES_FILE = os.path.join(BASE_DIR, "data", "votes.csv")
 MAX_CONTEXT_MESSAGES = 6
 
 
